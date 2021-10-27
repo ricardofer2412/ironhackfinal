@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* ****************************************************************NAVBAR STYLING ****************************************************************/
+.navBar {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.navBar > *{
+  text-align: center;
+  margin-top: 2vh;
+  padding-top: 2vh;
+  height: 5vh;
+  width: 5vw;
+  background-color: rgb(116, 116, 130);
+  text-decoration: none;
+  color: black;
+  border-radius:7px;
+}
