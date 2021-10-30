@@ -56,3 +56,25 @@
   color: black;
   border-radius:7px;
 }
+
+
+/* **************************************************************** PHONE LISTING STYLING******************************************************************************** */
+
+
+.iphone-images{
+  height: 10vh;
+  width: 3vw;
+}
+
+.samsung-images{
+  height: 10vh;
+  width: 4vw;
+}
+
+.phone-listing{
+  margin: 15vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+

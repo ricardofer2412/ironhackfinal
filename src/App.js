@@ -6,6 +6,8 @@ import Home from "./Components/Home";
 import Admin from "./Components/Admin";
 import NavBar from "./Components/NavBar";
 import IPhone from "./Components/Phones/iPhone";
+import Samsung from "./Components/Phones/Samsung"
+import Pixel from "./Components/Phones/Pixel"
 
 function App() {
   return (
@@ -24,10 +26,10 @@ function App() {
                     <IPhone/>
               </Route>
               <Route path='/samsung'>
-                    this is all samsung models we buy
-              </Route>
+                    <Samsung/>
+              </Route>  
               <Route path='/pixel'>
-                this is all pixel models we buy
+                <Pixel/>
               </Route>
               <Route path='/ipad'>
                 this is all ipad models we buy
