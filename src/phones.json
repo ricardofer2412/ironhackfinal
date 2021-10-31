@@ -76,7 +76,7 @@
                 },
                 {
                     "name": "iPhone 13 Mini",
-                    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-mini-midnight-select-2021?wid=940&hei=1112&fmt=png-alpha&.v=1629907844000",
+                    "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6443/6443191cv11d.jpg",
                     "path": "iPhone-13-Mini"
                 },
                 {
@@ -258,7 +258,91 @@
                 "path": "Pixel"
             }
         ]
-    }
+        }    
+    }],
+    "other": [{
+        "ipad": {
+            "models":[{
+                "name": "iPad 5",
+                "image": "https://m.media-amazon.com/images/I/81gd3uyxc3L._AC_SL1500_.jpg",
+                "path": "iPad-5"
+            },
+            {
+                "name": "iPad 6",
+                "image": "https://m.media-amazon.com/images/I/81qK4+EC+cL._AC_SX466_.jpg",
+                "path": "iPad-6"
+            },
+            {
+                "name": "iPad 7",
+                "image": "https://m.media-amazon.com/images/I/6162WMQWhVL._AC_SY445_.jpg",
+                "path": "iPad-7"
+            },
+            {
+                "name": "iPad 8",
+                "image": "https://m.media-amazon.com/images/I/71KlwCsb7nL._AC_SL1500_.jpg",
+                "path": "iPad-8"
+            },
+            {
+                "name": "iPad 9",
+                "image": "https://www.att.com/idpassets/global/devices/tablets/apple/apple-ipad-9th-generation-2021/defaultimage/silver-hero-zoom.png",
+                "path": "iPad-9"
+            },
+            {
+                "name": "iPad mini 4",
+                "image": "https://m.media-amazon.com/images/I/71qEUI+iuAL._AC_SL1500_.jpg",
+                "path": "iPad-mini-4"
+            },
+            {
+                "name": "iPad mini 5",
+                "image": "https://m.media-amazon.com/images/I/71zMHkHX6rL._AC_SS450_.jpg",
+                "path": "iPad-mini-5"
+            },
+            {
+                "name": "iPad mini 6",
+                "image": "https://m.media-amazon.com/images/I/71d9VedmTsL._AC_SL1500_.jpg",
+                "path": "iPad-mini-6"
+            },
+            {
+                "name": "iPad Air 3",
+                "image": "https://m.media-amazon.com/images/I/61pKdiWVerL._AC_SY679_.jpg",
+                "path": "iPad-Air-3"
+            },
+            {
+                "name": "iPad Air 4",
+                "image": "https://m.media-amazon.com/images/I/71Y2D+lRVAL._AC_SL1500_.jpg",
+                "path": "iPad-Air-4"
+            },
+            {
+                "name": "iPad Pro 2",
+                "image": "https://m.media-amazon.com/images/I/91YYeeO8rnL._AC_SL1500_.jpg",
+                "path": "iPad-Pro-2"
+            },
+            {
+                "name": "iPad Pro 3",
+                "image": "https://m.media-amazon.com/images/I/61DsXT1ldtL._AC_SY679_.jpg",
+                "path": "iPad-Pro-3"
+            },
+            {
+                "name": "iPad Pro 4",
+                "image": "https://m.media-amazon.com/images/I/81FH2j7EnJL._AC_SL1500_.jpg",
+                "path": "iPad-Pro-4"
+            },
+            {
+                "name": "iPad Pro 5",
+                "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4264/4264603_sd.jpg",
+                "path": "iPad-Pro-5"
+            }
+        ]
+        },
+        "macbook":{
+            "models":[
+                {
+                    "name": "iPad Pro 5",
+                    "image": "https://www.att.com/idpassets/global/devices/tablets/apple/apple-ipad-9th-generation-2021/defaultimage/silver-hero-zoom.png",
+                    "path": "iPad-Pro-5"
+                }
+            ]
+            }
         
     }]
 

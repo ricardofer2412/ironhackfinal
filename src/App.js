@@ -1,18 +1,22 @@
 import React from "react";
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
+import Devices from './phones.json'
 import Home from "./Components/Home";
 import Admin from "./Components/Admin";
 import NavBar from "./Components/NavBar";
+
 import IPhone from "./Components/Phones/iPhone";
 import Samsung from "./Components/Phones/Samsung"
 import Pixel from "./Components/Phones/Pixel"
+import IPad from "./Components/iPad"
+
+import Carrier from "./Components/Carrier/Main";
+import Att from "./Components/Carrier/Att"
 
 function App() {
   return (
     <div className="App">
-     
         <Router>
           <NavBar/>
             <Switch>
@@ -32,11 +36,20 @@ function App() {
                 <Pixel/>
               </Route>
               <Route path='/ipad'>
-                this is all ipad models we buy
+                <IPad/>
               </Route>
-              <Route path='/macbook'>
-                this is all macbook models we buy
-              </Route>
+              <Route
+                 path="/:deviceModel" exact
+                 render={(props) => <Carrier device={Devices}{...props}/>}
+              />
+              <Route 
+                    path='/:device/att' 
+                    render={(props) => <Att device={Devices}{...props} />}
+              />
+              <Route 
+                    path='/:device/verizon' 
+                    render={(props) => <Att device={Devices}{...props} />}
+              />
             </Switch>
         </Router>
       

@@ -9,7 +9,7 @@ export default function NavBar() {
             <Link to='/samsung'>Samsung</Link>
             <Link to='/pixel'>Pixel</Link>
             <Link to='/ipad'>iPad</Link>
-            <Link to='/macbook'>Macbook</Link>
+            {/* <Link to='/macbook'>Macbook</Link> */}
 
 
        </header>
