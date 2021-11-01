@@ -33,9 +33,11 @@ function App() {
           <Route path="/admin/products/newproduct" exact>
             <NewProduct />
           </Route>
-          <Route path="/admin/products/:id" exact>
-            <EditProduct />
-          </Route>
+          <Route
+            exact
+            path="/admin/products/:id"
+            component={EditProduct}
+          ></Route>
           <Route path="/samsung">this is all samsung models we buy</Route>
           <Route path="/pixel">this is all pixel models we buy</Route>
           <Route path="/ipad">this is all ipad models we buy</Route>

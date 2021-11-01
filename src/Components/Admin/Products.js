@@ -23,13 +23,13 @@ class Products extends Component {
     });
   };
 
-  deleteProduct = (product) => {
+  deleteProduct = (product, e) => {
     const { _id } = product;
     axios.delete(`http://localhost:5000/api/products/${_id}`).then(() => {
       alert("Product Deleted");
+      const { history } = this.props;
+      history.push("/admin/products");
     });
-    const { history } = this.props;
-    history.push("/admin/products");
   };
 
   render() {
@@ -60,9 +60,9 @@ class Products extends Component {
                       Delete
                     </button>
 
-                    <button onClick={() => this.editProduct(product)}>
-                      Edit
-                    </button>
+                    <Link to={`/admin/products/${product._id}`}>
+                      <p>Edit</p>
+                    </Link>
                   </div>
                 ))}{" "}
               </div>
