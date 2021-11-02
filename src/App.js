@@ -13,6 +13,10 @@ import IPad from "./Components/iPad"
 
 import Carrier from "./Components/Carrier/Main";
 import Att from "./Components/Carrier/Att"
+import Products from "./Components/Admin/Products";
+import SideBar from "./Components/Admin/SideBar";
+import NewProduct from "./Components/Admin/NewProduct";
+import EditProduct from "./Components/Admin/EditProduct";
 
 function App() {
   return (
@@ -26,6 +30,17 @@ function App() {
               <Route path="/admin">
                 <Admin/>
               </Route>
+              <Route path="/admin/products" exact>
+            <Products />
+          </Route>{" "}
+          <Route path="/admin/products/newproduct" exact>
+            <NewProduct />
+          </Route>
+          <Route
+            exact
+            path="/admin/products/:id"
+            component={EditProduct}
+          ></Route>
               <Route path='/iphone'>
                     <IPhone/>
               </Route>
@@ -56,6 +71,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
