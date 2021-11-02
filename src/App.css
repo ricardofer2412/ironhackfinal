@@ -1,5 +1,12 @@
+body{
+  /* background-color: rgba(121, 121, 121, 0.616) */
+}
+
+
+
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {
@@ -42,20 +49,22 @@
 .navBar {
   display: flex;
   justify-content: space-evenly;
-  
+  background-color:  rgb(29, 29, 29);
+  height: 10vh;
 }
 
 .navBar > *{
   text-align: center;
   margin-top: 2vh;
   padding-top: 2vh;
-  height: 5vh;
-  width: 5vw;
-  background-color: rgb(116, 116, 130);
+  height: 3vh;
+  width: 4vw;
+  color:rgb(146, 134, 134);
   text-decoration: none;
-  color: black;
-  border-radius:7px;
+  font-size: 1vw;
+  border-radius:5px;
 }
+
 
 
 /* **************************************************************** PHONE LISTING STYLING******************************************************************************** */
@@ -80,4 +89,17 @@
 
 .ipad-images{
   height: 10vh;
+}
+
+.storage-img{
+  height: 10vh;
+  width: 6vw;
+}
+
+
+.storage-listing{
+  margin: 20%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-between;
 }

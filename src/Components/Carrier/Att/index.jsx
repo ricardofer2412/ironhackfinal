@@ -15,8 +15,22 @@ export default class Att extends Component {
 
 
         return (
-            <div>
-              
+            <div className="storage-listing">
+              {
+                  deviceDetails.storage.map(storage => {
+                      return (
+                          <div>
+                            <img className="storage-img" src={deviceDetails.image} alt={deviceDetails.name}/>
+                             <h2> {deviceDetails.name}</h2>
+                             <h4>{storage}</h4>
+                             <button>Get an Offer</button>
+                          </div>
+                      )
+                  }
+                    
+                  )
+              }
+
             </div>
         )
     }

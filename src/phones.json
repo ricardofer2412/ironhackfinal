@@ -5,94 +5,112 @@
                 {
                     "name": "iPhone 8",
                     "image": "https://www.theiphonewiki.com/w/images/d/de/IPhone_8.png",
-                    "path": "iPhone-8"
+                    "path": "iPhone-8",
+                    "storage": ["64GB", "128GB", "256GB"]
                 },
                 
                 { 
                     "name" : "iPhone 8 Plus",
                     "image": "https://www.theiphonewiki.com/w/images/c/c2/IPhone_8_Plus.png",
-                    "path": "iPhone-8-Plus"
+                    "path": "iPhone-8-Plus",
+                    "storage": ["64GB", "128GB", "256GB"]
                 },
     
                 {
                     "name" : "iPhone X",
                     "image": "https://www.theiphonewiki.com/w/images/thumb/c/cd/IPhone_X.png/300px-IPhone_X.png",
-                    "path": "iPhone-X"
+                    "path": "iPhone-X",
+                    "storage": ["64GB", "256GB"]
                 },
                 {
                     "name" : "iPhone XR",
                     "image": "https://www.theiphonewiki.com/w/images/thumb/5/5f/IPhone_XR.jpg/300px-IPhone_XR.jpg",
-                    "path": "iPhone-XR"
+                    "path": "iPhone-XR",
+                    "storage": ["64GB", "128GB", "256GB"]
                 },
                 {
                     "name" : "iPhone XS",
                     "image": "https://www.theiphonewiki.com/w/images/thumb/4/4e/IPhone_XS.jpg/300px-IPhone_XS.jpg",
-                    "path": "iPhone-XS"
+                    "path": "iPhone-XS",
+                    "storage": ["64GB", "256GB", "512GB"]
                 },
                 {
                     "name": "iPhone XS Max",
                     "image": "https://www.theiphonewiki.com/w/images/thumb/3/37/IPhone_XS_Max.jpg/400px-IPhone_XS_Max.jpg",
-                    "path": "iPhone-XS-Max"
+                    "path": "iPhone-XS-Max",
+                    "storage": ["64GB", "256GB", "512GB"]
                 },
                 {
                     "name": "iPhone 11",
                     "image": "https://m.media-amazon.com/images/I/71sc98Tb66S._AC_SX522_.jpg",
-                    "path": "iPhone-11"
+                    "path": "iPhone-11",
+                    "storage": ["64GB", "128GB", "256GB"]
                 },
                 {
                     "name": "iPhone 11 Pro",
                     "image": "https://www.theiphonewiki.com/w/images/thumb/5/58/Iphone11pro.jpg/300px-Iphone11pro.jpg",
-                    "path": "iPhone-11-Pro"
+                    "path": "iPhone-11-Pro",
+                    "storage": ["64GB", "128GB", "256GB"]
                 },
                 {
                     "name": "iPhone 11 Pro Max",
                     "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/refurb-iphone-11-pro-max-midnight-green-2019?wid=1144&hei=1144&fmt=jpeg&qlt=80&.v=1611101610000",
-                    "path": "iPhone-11-Pro-Max"
+                    "path": "iPhone-11-Pro-Max",
+                    "storage": ["64GB", "128GB", "256GB"]
                 },
                 {
                     "name": "iPhone SE",
                     "image": "https://m.media-amazon.com/images/I/81K+adaNRiL._AC_SL1500_.jpg",
-                    "path": "iPhone-SE"
+                    "path": "iPhone-SE",
+                    "storage": ["16GB", "32GB", "64GB", "128GB"]
                 },
                 {
                     "name": "iPhone 12 Mini",
                     "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6443/6443301_sd.jpg;maxHeight=640;maxWidth=550",
-                    "path": "iPhone-12-Mini"
+                    "path": "iPhone-12-Mini",
+                    "storage": ["64GB", "128GB", "256GB"]
                 },
                 {
                     "name": "iPhone 12",
                     "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6009/6009897_sd.jpg;maxHeight=640;maxWidth=550",
-                    "path": "iPhone-12"
+                    "path": "iPhone-12",
+                    "storage": ["64GB", "128GB", "256GB"]
                 },
                 {
                     "name": "iPhone 12 Pro",
                     "image": "https://www.theiphonewiki.com/w/images/c/c0/IPhone_12_Pro.jpg",
-                    "path": "iPhone-12-Pro"
+                    "path": "iPhone-12-Pro",
+                    "storage": ["128GB", "256GB", "512GB"]
                 },
                 {
                     "name": "iPhone 12 Pro Max",
                     "image": "https://www.theiphonewiki.com/w/images/6/60/IPhone_12_Pro_Max.jpg",
-                    "path": "iPhone-12-Pro-Max"
+                    "path": "iPhone-12-Pro-Max",
+                    "storage": ["128GB", "256GB", "512GB"]
                 },
                 {
                     "name": "iPhone 13 Mini",
                     "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6443/6443191cv11d.jpg",
-                    "path": "iPhone-13-Mini"
+                    "path": "iPhone-13-Mini",
+                    "storage": ["128GB", "256GB", "512GB"]
                 },
                 {
                     "name": "iPhone 13",
                     "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6443/6443392_sd.jpg;maxHeight=640;maxWidth=550",
-                    "path": "iPhone-13"
+                    "path": "iPhone-13",
+                    "storage": ["128GB", "256GB", "512GB"]
                 },
                 {
                     "name": "iPhone 13 Pro",
                     "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-graphite-select?wid=940&hei=1112&fmt=png-alpha&.v=1631652957000",
-                    "path": "iPhone-13-Pro"
+                    "path": "iPhone-13-Pro",
+                    "storage": ["128GB", "256GB", "512GB", "1TB"]
                 },
                 { 
                     "name": "iPhone 13 Pro Max",
                     "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=940&hei=1112&fmt=png-alpha&.v=1631652956000",
-                    "path": "iPhone-13-Pro-Max"
+                    "path": "iPhone-13-Pro-Max",
+                    "storage": ["128GB", "256GB", "512GB", "1TB"]
                 }
             ]
         },
@@ -101,77 +119,92 @@
             {
                 "name": "Samsung Galaxy S7",
                 "image": "https://m.media-amazon.com/images/I/71tISlI34iL._AC_SL1500_.jpg",
-                "path": "Samsung-Galaxy-S7"
+                "path": "Samsung-Galaxy-S7",
+                "storage": ["32GB"]
             },
             {
                 "name": "Samsung Galaxy S8",
                 "image": "https://m.media-amazon.com/images/I/61B0qTsNumL._AC_SX522_.jpg",
-                "path": "Samsung-Galaxy-S8"
+                "path": "Samsung-Galaxy-S8",
+                "storage": ["64GB", "128GB"]
             },
             {
                 "name": "Samsung Galaxy S9",
                 "image": "https://m.media-amazon.com/images/I/51KUYHfScAL._AC_SL1000_.jpg",
-                "path": "Samsung-Galaxy-S9"
+                "path": "Samsung-Galaxy-S9",
+                "storage": ["64GB", "128GB", "256GB"]
             },
             {
                 "name": "Samsung Galaxy S10e",
                 "image": "https://m.media-amazon.com/images/I/71bK3oKRCOL._AC_SX466_.jpg",
-                "path": "Samsung-Galaxy-S10e"
+                "path": "Samsung-Galaxy-S10e",
+                "storage": ["128GB", "256GB"]
             },
             {
                 "name": "Samsung Galaxy S10",
                 "image": "https://m.media-amazon.com/images/I/61YVqHdFRxL._AC_SL1322_.jpg",
-                "path": "Samsung-Galaxy-S10"
+                "path": "Samsung-Galaxy-S10",
+                "storage": ["128GB", "512GB"]
             },
             {
                 "name": "Samsung Galaxy S10+",
                 "image": "https://m.media-amazon.com/images/I/61YVqHdFRxL._AC_SL1322_.jpg",
-                "path": "Samsung-Galaxy-S10+"
+                "path": "Samsung-Galaxy-S10+",
+                "storage": ["128GB", "512GB", "1TB"]
             },
             {
                 "name": "Samsung Galaxy S10 5G",
                 "image": "https://m.media-amazon.com/images/I/61j1LuCWgML._AC_SL1137_.jpg",
-                "path": "Samsung-Galaxy-S10-5G"
+                "path": "Samsung-Galaxy-S10-5G",
+                "storage": ["128GB", "256GB"]
             },
             {
                 "name": "Samsung Galaxy S10 Lite",
                 "image": "https://www.backmarket.com/cdn-cgi/image/format=auto,quality=75,width=3840/https://d28i4xct2kl5lp.cloudfront.net/product_images/1579180208.89.jpg",
-                "path": "Samsung-Galaxy-S10-Lite"
+                "path": "Samsung-Galaxy-S10-Lite",
+                "storage": ["128GB"]
             },
             {
                 "name": "Samsung Galaxy S20",
                 "image": "https://m.media-amazon.com/images/I/71RxOftVoQL._AC_SX569_.jpg",
-                "path": "Samsung-Galaxy-S20"
+                "path": "Samsung-Galaxy-S20",
+                "storage": ["128GB"]
             },
             {
                 "name": "Samsung Galaxy S20+",
                 "image": "https://m.media-amazon.com/images/I/71C4k+Ej67L._AC_SY450_.jpg",
-                "path": "Samsung-Galaxy-S20+"
+                "path": "Samsung-Galaxy-S20+",
+                "storage": ["128GB", "256GB", "512GB"]
             },
             {
                 "name": "Samsung Galaxy S20 Ultra",
                 "image": "https://m.media-amazon.com/images/I/612IsCbjo5L._AC_SX466_.jpg",
-                "path": "Samsung Galaxy S20-Ultra"
+                "path": "Samsung-Galaxy-S20-Ultra",
+                "storage": ["128GB", "256GB", "512GB"]
             },
             {
                 "name": "Samsung Galaxy S20 FE",
                 "image": "https://m.media-amazon.com/images/I/71RxOftVoQL._AC_SX569_.jpg",
-                "path": "Samsung-Galaxy-S20-FE"
+                "path": "Samsung-Galaxy-S20-FE",
+                "storage": ["128GB", "256GB", "512GB"]
             },
             {
                 "name": "Samsung Galaxy S21",
                 "image": "https://m.media-amazon.com/images/I/81u8oHzGLmL._AC_SL1500_.jpg",
-                "path": "Samsung-Galaxy-S21"
+                "path": "Samsung-Galaxy-S21",
+                "storage": ["128GB", "256GB"]
             },
             {
                 "name": "Samsung Galaxy S21 Plus",
                 "image": "https://m.media-amazon.com/images/I/61cjeSE+Z-L._AC_SL1000_.jpg",
-                "path": "Samsung-Galaxy-S21-Plus"
+                "path": "Samsung-Galaxy-S21-Plus",
+                "storage": ["128GB", "256GB"]
             },
             {
                 "name": "Samsung Galaxy S21 Ultra",
                 "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6444/6444516_sd.jpg",
-                "path": "Samsung-Galaxy-S21-Ultra"
+                "path": "Samsung-Galaxy-S21-Ultra",
+                "storage": ["128GB"]
             }
         ]
     },
@@ -180,169 +213,193 @@
             {
                 "name": "Pixel 6 Pro",
                 "image": "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-6-pro-1.jpg",
-                "path": "Pixel-6-Pro"
+                "path": "Pixel-6-Pro",
+                "storage": ["128GB", "256GB", "512GB"]
             },
             {
                 "name": "Pixel 6",
                 "image": "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-6-1.jpg",
-                "path": "Pixel-6"
+                "path": "Pixel-6",
+                "storage": ["128GB", "256GB"]
             },
             {
                 "name": "Pixel 5a 5G",
                 "image": "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-5a-5g-00.jpg",
-                "path": "Pixel-5a-5G"
+                "path": "Pixel-5a-5G",
+                "storage": ["128GB"]
             },
             {
                 "name": "Pixel 5",
                 "image": "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-5-5g-1.jpg",
-                "path": "Pixel-5"
+                "path": "Pixel-5",
+                "storage": ["128GB"]
             },
             {
                 "name": "Pixel 4a 5G",
                 "image": "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-4a-5g-1.jpg",
-                "path": "Pixel-4a-5G"
+                "path": "Pixel-4a-5G",
+                "storage": ["128GB"]
             },
             {
                 "name": "Pixel 4a",
                 "image": "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-4a-1.jpg",
-                "path": "Pixel-4a"
+                "path": "Pixel-4a",
+                "storage": ["128GB"]
             },
             {
                 "name": "Pixel 4XL",
                 "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-4-r1.jpg",
-                "path": "Pixel-4XL"
+                "path": "Pixel-4XL",
+                "storage": ["64GB", "128GB"]
             },
             {
                 "name": "Pixel 4",
                 "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-4-r1.jpg",
-                "path": "Pixel-4"
+                "path": "Pixel-4",
+                "storage": ["64GB"]
             },
             {
                 "name": "Pixel 3a XL",
                 "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-3a-xl-.jpg",
-                "path": "Pixel-3a-XL"
+                "path": "Pixel-3a-XL",
+                "storage": ["64GB"]
             },
             {
                 "name": "Pixel 3a",
                 "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-3a.jpg",
-                "path": "Pixel-3a"
+                "path": "Pixel-3a",
+                "storage": ["64GB"]
             },
             {
                 "name": "Pixel 3 XL",
                 "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-3xl-.jpg",
-                "path": "Pixel-3-XL"
+                "path": "Pixel-3-XL",
+                "storage": ["64GB", "128GB"]
             },
             {
                 "name": "Pixel 3",
                 "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-3-.jpg",
-                "path": "Pixel-3"
+                "path": "Pixel-3",
+                "storage": ["64GB", "128GB"]
             },
             {
                 "name": "Pixel 2",
                 "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-2.jpg",
-                "path": "Pixel-2"
+                "path": "Pixel-2",
+                "storage": ["64GB", "128GB"]
             },
             {
                 "name": "Pixel 2 XL",
                 "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-xl2-.jpg",
-                "path": "Pixel-2-XL"
+                "path": "Pixel-2-XL",
+                "storage": ["64GB", "128GB"]
             },
             {
                 "name": "Pixel XL",
                 "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-xl.jpg",
-                "path": "Pixel-XL"
+                "path": "Pixel-XL",
+                "storage": ["32GB", "128GB"]
             },
             {
                 "name": "Pixel",
                 "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel.jpg",
-                "path": "Pixel"
+                "path": "Pixel",
+                "storage": ["32GB", "128GB"]
             }
         ]
-        }    
-    }],
-    "other": [{
-        "ipad": {
+        },
+        "iPad": {
             "models":[{
                 "name": "iPad 5",
                 "image": "https://m.media-amazon.com/images/I/81gd3uyxc3L._AC_SL1500_.jpg",
-                "path": "iPad-5"
+                "path": "iPad-5",
+                "storage": ["32GB", "128GB"]
             },
             {
                 "name": "iPad 6",
                 "image": "https://m.media-amazon.com/images/I/81qK4+EC+cL._AC_SX466_.jpg",
-                "path": "iPad-6"
+                "path": "iPad-6",
+                "storage": ["32GB", "128GB"]
             },
             {
                 "name": "iPad 7",
                 "image": "https://m.media-amazon.com/images/I/6162WMQWhVL._AC_SY445_.jpg",
-                "path": "iPad-7"
+                "path": "iPad-7",
+                "storage": ["32GB", "128GB"]
             },
             {
                 "name": "iPad 8",
                 "image": "https://m.media-amazon.com/images/I/71KlwCsb7nL._AC_SL1500_.jpg",
-                "path": "iPad-8"
+                "path": "iPad-8",
+                "storage": ["64GB", "256GB"]
             },
             {
                 "name": "iPad 9",
                 "image": "https://www.att.com/idpassets/global/devices/tablets/apple/apple-ipad-9th-generation-2021/defaultimage/silver-hero-zoom.png",
-                "path": "iPad-9"
+                "path": "iPad-9",
+                "storage": ["64GB", "256GB"]
             },
             {
                 "name": "iPad mini 4",
                 "image": "https://m.media-amazon.com/images/I/71qEUI+iuAL._AC_SL1500_.jpg",
-                "path": "iPad-mini-4"
+                "path": "iPad-mini-4",
+                "storage": ["16GB, 32GB, 64GB, 128GB"]
             },
             {
                 "name": "iPad mini 5",
                 "image": "https://m.media-amazon.com/images/I/71zMHkHX6rL._AC_SS450_.jpg",
-                "path": "iPad-mini-5"
+                "path": "iPad-mini-5",
+                "storage": ["64GB", "256GB"]
             },
             {
                 "name": "iPad mini 6",
                 "image": "https://m.media-amazon.com/images/I/71d9VedmTsL._AC_SL1500_.jpg",
-                "path": "iPad-mini-6"
+                "path": "iPad-mini-6",
+                "storage": ["64GB", "256GB"]
             },
             {
                 "name": "iPad Air 3",
                 "image": "https://m.media-amazon.com/images/I/61pKdiWVerL._AC_SY679_.jpg",
-                "path": "iPad-Air-3"
+                "path": "iPad-Air-3",
+                "storage": ["64GB", "256GB"]
             },
             {
                 "name": "iPad Air 4",
                 "image": "https://m.media-amazon.com/images/I/71Y2D+lRVAL._AC_SL1500_.jpg",
-                "path": "iPad-Air-4"
+                "path": "iPad-Air-4",
+                "storage": ["64GB", "256GB"]
             },
             {
                 "name": "iPad Pro 2",
                 "image": "https://m.media-amazon.com/images/I/91YYeeO8rnL._AC_SL1500_.jpg",
-                "path": "iPad-Pro-2"
+                "path": "iPad-Pro-2",
+                "storage": ["64GB", "256GB", "512GB"]
             },
             {
                 "name": "iPad Pro 3",
                 "image": "https://m.media-amazon.com/images/I/61DsXT1ldtL._AC_SY679_.jpg",
-                "path": "iPad-Pro-3"
+                "path": "iPad-Pro-3",
+                "storage": ["64GB", "256GB", "512GB", "1TB"]
             },
             {
                 "name": "iPad Pro 4",
                 "image": "https://m.media-amazon.com/images/I/81FH2j7EnJL._AC_SL1500_.jpg",
-                "path": "iPad-Pro-4"
+                "path": "iPad-Pro-4",
+                "storage": ["64GB", "256GB", "512GB", "1TB"]
             },
             {
                 "name": "iPad Pro 5",
                 "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4264/4264603_sd.jpg",
-                "path": "iPad-Pro-5"
+                "path": "iPad-Pro-5",
+                "storage": ["64GB", "256GB", "512GB", "1TB", "2TB"]
             }
         ]
-        },
-        "macbook":{
-            "models":[
-                {
-                    "name": "iPad Pro 5",
-                    "image": "https://www.att.com/idpassets/global/devices/tablets/apple/apple-ipad-9th-generation-2021/defaultimage/silver-hero-zoom.png",
-                    "path": "iPad-Pro-5"
-                }
-            ]
-            }
+        }
+
+    }],
+    "other": [{
+        
+      
         
     }]
 

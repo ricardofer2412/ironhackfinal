@@ -9,12 +9,11 @@ export default function iPad() {
             
             <div className="phone-listing">
                 {device.map(ipad => 
-                    ipad.other[0].ipad.models.map(model => {
+                    ipad.phone[0].iPad.models.map(model => {
                         return (
                         <section>
                             <img className="ipad-images" src={model.image} alt={model.path}/>
                             <Link to={`${model.path}`}>{model.name}</Link>
-                            
                         </section>
                         )
                     })
