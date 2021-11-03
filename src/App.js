@@ -6,13 +6,10 @@ import Home from "./Components/Home";
 import Admin from "./Components/Admin";
 import NavBar from "./Components/NavBar";
 
-import IPhone from "./Components/Phones/iPhone";
-import Samsung from "./Components/Phones/Samsung"
-import Pixel from "./Components/Phones/Pixel"
-import IPad from "./Components/iPad"
+import Device from "./Components/Func"
+import CarrierLinks from "./Components/Carrier/Routes";
+import Carrier from './Components/Carrier'
 
-import Carrier from "./Components/Carrier/Main";
-import Att from "./Components/Carrier/Att"
 import Products from "./Components/Admin/Products";
 import SideBar from "./Components/Admin/SideBar";
 import NewProduct from "./Components/Admin/NewProduct";
@@ -30,40 +27,27 @@ function App() {
               <Route path="/admin">
                 <Admin/>
               </Route>
-              <Route path="/admin/products" exact>
-            <Products />
-          </Route>{" "}
-          <Route path="/admin/products/newproduct" exact>
-            <NewProduct />
-          </Route>
-          <Route
-            exact
-            path="/admin/products/:id"
-            component={EditProduct}
-          ></Route>
-              <Route path='/iphone'>
-                    <IPhone/>
+              <Route exact path="/admin/products" component={Products}>
               </Route>
-              <Route path='/samsung'>
-                    <Samsung/>
-              </Route>  
-              <Route path='/pixel'>
-                <Pixel/>
-              </Route>
-              <Route path='/ipad'>
-                <IPad/>
+              <Route path="/admin/products/newproduct" exact>
+                <NewProduct />
               </Route>
               <Route
-                 path="/:deviceModel" exact
-                 render={(props) => <Carrier device={Devices}{...props}/>}
+                exact
+                path="/admin/products/:id"
+                component={EditProduct}
               />
               <Route 
-                    path='/:device/att' 
-                    render={(props) => <Att device={Devices}{...props} />}
+                exact path='/:phone'
+                component={Device}
+              />
+              <Route
+                exact path="/:phone/:deviceModel" 
+                render={(props) => <CarrierLinks device={Devices}{...props}/>}
               />
               <Route 
-                    path='/:device/verizon' 
-                    render={(props) => <Att device={Devices}{...props} />}
+                path='/:phone/:device/:carrier' 
+                render={() => <Carrier />}
               />
             </Switch>
         </Router>

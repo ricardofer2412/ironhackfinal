@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {useParams} from 'react-router-dom'
+import Devices from '../../phones.json'
 
-export default class Att extends Component {
-    render() {
-        
-        const deviceID = this.props.location.pathname.slice(1, -4)
-        const deviceArr  = deviceID.split("-")
-        const deviceName = deviceArr[0]
-        const deviceDetails = this.props.device[0].phone[0][deviceName]
+export default function Att  () {
+
+        let params = useParams() //GET THE PHONE NAME FROM SEARCHBAR
+        const deviceName = params.device.split("-")[0]
+        console.log(deviceName)
+        const deviceDetails = Devices[0].phone[0][deviceName]
         .models
         .find((phone)=>
-            phone.path === deviceID
-        )
-        console.log(deviceDetails)
-
+           
+            phone.path === params.device
+        ) //RETUNRS THE DEVICE THAT MATCHES THE ONE ON PARAMS
 
         return (
             <div className="storage-listing">
@@ -33,5 +33,5 @@ export default class Att extends Component {
 
             </div>
         )
-    }
+    
 }
