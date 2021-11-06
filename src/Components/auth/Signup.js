@@ -7,18 +7,21 @@ class Signup extends Component {
 
   // handleChange() and handleSubmit() will be added here
 
-  handleFormSubmit = (e) => {
-    e.preventDefault();
-    authService.signup(this.state).then((data) => {
-      console.log({ data });
-      this.setState({
-        username: "",
-        password: "",
-      });
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    const { username, password } = this.state;
 
-      // upon successfull
-      this.props.history.push("/");
-    });
+    authService
+      .signup(username, password)
+      .then((createdUser) => {
+        this.setState({
+          username: "",
+          password: "",
+        });
+        // this.props.getUser(response, true);
+        this.props.history.push("/admin");
+      })
+      .catch((error) => console.log(error));
   };
 
   handleChange = (event) => {

@@ -6,9 +6,7 @@ const cookieParser = require("cookie-parser");
 
 const cors = require("cors");
 
-const MongoStore = require("connect-mongo");
 const session = require("express-session");
-const MONGO_URI = require("../utils/consts");
 
 module.exports = (app) => {
   app.set("trust proxy", 1);
@@ -23,15 +21,12 @@ module.exports = (app) => {
 
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
-  app.use(cookieParser());
+  app.use(cookieParser("super hyper secret key"));
   app.use(
     session({
       secret: process.env.SESSION_SECRET || "super hyper secret key",
-      resave: false,
-      saveUninitialized: false,
-      store: MongoStore.create({
-        mongoUrl: MONGO_URI,
-      }),
+      resave: true,
+      saveUninitialized: true,
     })
   );
 };

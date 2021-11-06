@@ -20,25 +20,41 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    authService.getSession().then((data) => {
-      console.log(data);
-      const { user } = data;
-      this.setState({
-        user,
-        loading: false,
-      });
-    });
+    this.fetchUser();
   }
+  fetchUser = () => {
+    if (this.state.user === null) {
+      authService
+        .loggedin()
+        .then((data) => {
+          this.setState({
+            user: data,
+            isLoggedIn: true,
+          });
+        })
+        .catch((err) => {
+          this.setState({
+            user: null,
+            isLoggedIn: false,
+          });
+        });
+    }
+  };
+  getTheUser = (userObj, loggedIn) => {
+    this.setState({
+      user: userObj,
+      isLoggedIn: loggedIn,
+    });
+  };
   render() {
     return (
       <div className="App">
         <Router>
-          {/* <NavBar
+          <NavBar
             userData={this.state.user}
             userIsLoggedIn={this.state.isLoggedIn}
             getUser={this.getTheUser}
-          /> */}
-          <NavBar user={this.state.user} loading={this.state.loading} />
+          />
 
           <Route path="/admin" exact>
             <Admin />
@@ -48,7 +64,9 @@ class App extends React.Component {
             <Route
               exact
               path="/signup"
-              render={(props) => <Signup {...props} />}
+              render={(props) => (
+                <Signup {...props} getUser={this.getTheUser} />
+              )}
             />
             <Route
               exact
