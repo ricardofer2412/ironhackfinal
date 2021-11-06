@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import '../../App.css'
+import authService from '../auth/auth-services';
 
 export default function NavBar() {
     return (
@@ -9,9 +10,10 @@ export default function NavBar() {
             <Link to='/samsung'>Samsung</Link>
             <Link to='/pixel'>Pixel</Link>
             <Link to='/ipad'>iPad</Link>
+            <Link to='/admin'>Admin</Link>
             {/* <Link to='/macbook'>Macbook</Link> */}
-
-
-       </header>
+      </header>
     )
 }
+
+ 

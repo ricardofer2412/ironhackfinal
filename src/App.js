@@ -17,14 +17,71 @@ import Products from "./Components/Admin/Products";
 import SideBar from "./Components/Admin/SideBar";
 import NewProduct from "./Components/Admin/NewProduct";
 import EditProduct from "./Components/Admin/EditProduct";
+import Signup from "./Components/auth/Signup";
+import authService from "./Components/auth/auth-services";
+import Login from "./Components/auth/Login";
+import AdminNavBar from "./Components/AdminNavBar";
 
+class App extends React.Component {
+  state = {
+    isLoggedIn: false,
+    user: null,
+    loading: true,
+  };
+  componentDidMount() {
+    this.fetchUser();
+  }
+  fetchUser = () => {
+    if (this.state.user === null) {
+      authService
+        .loggedin()
+        .then((data) => {
+          this.setState({
+            user: data,
+            isLoggedIn: true,
+          });
+        })
+        .catch((err) => {
+          this.setState({
+            user: null,
+            isLoggedIn: false,
+          });
+        });
+    }
+  };
+  getTheUser = (userObj, loggedIn) => {
+    this.setState({
+      user: userObj,
+      isLoggedIn: loggedIn,
+    });
+  };
 
-function App() {
+render(){
   return (
     <div className="App">
         <Router>
-          <NavBar/>
+        <NavBar/>
+        {/* <AdminNavBar
+            userData={this.state.user}
+            userIsLoggedIn={this.state.isLoggedIn}
+            getUser={this.getTheUser}
+          /> */}
+          <Route path="/admin" exact>
+            <Admin />
+          </Route>
             <Switch>
+            <Route
+              exact
+              path="/signup"
+              render={(props) => (
+                <Signup {...props} getUser={this.getTheUser} />
+              )}
+            />
+            <Route
+              exact
+              path="/login"
+              render={(props) => <Login {...props} getUser={this.getTheUser} />}
+            />
               <Route path="/" exact>
                 <Home/>
               </Route>
@@ -66,6 +123,10 @@ function App() {
       
     </div>
   );
+  
+}
+ 
+  
 }
 
 export default App;
