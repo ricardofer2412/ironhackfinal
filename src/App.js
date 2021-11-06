@@ -6,14 +6,18 @@ import Home from "./Components/Home";
 import Admin from "./Components/Admin";
 import NavBar from "./Components/NavBar";
 
-import Device from "./Components/Func"
+import Device from "./Components/Devices"
 import CarrierLinks from "./Components/Carrier/Routes";
-import Carrier from './Components/Carrier'
+import Storage from './Components/Carrier'
+import Offers from "./Components/Offers"
+import UserForm from './Components/UserForm'
+
 
 import Products from "./Components/Admin/Products";
 import SideBar from "./Components/Admin/SideBar";
 import NewProduct from "./Components/Admin/NewProduct";
 import EditProduct from "./Components/Admin/EditProduct";
+
 
 function App() {
   return (
@@ -46,8 +50,16 @@ function App() {
                 render={(props) => <CarrierLinks device={Devices}{...props}/>}
               />
               <Route 
-                path='/:phone/:device/:carrier' 
-                render={() => <Carrier />}
+                exact path='/:phone/:device/:carrier' 
+                render={() => <Storage />}
+              />
+              <Route
+                exact path='/:phone/:device/:carrier/:storage'
+                render={() => <Offers />}
+              />
+              <Route
+                exact path='/:phone/:device/:carrier/:storage/userform'
+                render={() => <UserForm />}
               />
             </Switch>
         </Router>

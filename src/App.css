@@ -1,9 +1,3 @@
-body{
-  /* background-color: rgba(121, 121, 121, 0.616) */
-}
-
-
-
 .App {
   text-align: center;
  
@@ -102,4 +96,66 @@ body{
   margin-top: 10%;
   display: flex;
   justify-content: space-between;
+}
+
+.final-offer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.offer-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 50vh;
+  width: 40vh;
+  background-color: #EEE4DC;
+  padding: 5vh;
+}
+.offer-div > *{
+  margin: 0;
+}
+.amount{
+  margin: 0;
+  font-size: 5vw;
+}
+
+.product-info{
+  display: flex;
+  align-items: space-around;
+  align-items: center;
+}
+.product-info img{
+  height: 60vh;
+  margin-right: 4vw;
+}
+
+.get-paid-btn{
+  width: 50%;
+}
+
+.user-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-sizing{
+  width: 35vw;
+  margin-top: 2.5vh;
+  display: flex;
+  justify-content: center;
+}
+
+.box-sizing > *{
+  width: 20vw;
+  margin-top: 2.5vh;
+}
+
+.form-select{
+  margin-top: 2vh;
+  width: 20vw;
 }

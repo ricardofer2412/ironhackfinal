@@ -9,7 +9,7 @@ export default function Devices() {
     
     let phonePath = useParams().phone
     let phoneName;
-    // useParams().phone.charAt(0).toUpperCase() + useParams().phone.slice(1)
+
     if(phonePath.charAt(0) === 'i'){
        phoneName = phonePath.charAt(0) + phonePath.charAt(1).toUpperCase() + phonePath.slice(2) 
     }else{
