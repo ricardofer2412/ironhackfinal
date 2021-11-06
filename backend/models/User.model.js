@@ -6,6 +6,12 @@ const userSchema = new Schema(
       type: String,
     },
     password: String,
+    role: String,
+    userImg: String,
+    firstName: String,
+    lastName: String,
+    active: Boolean,
+    userEmail: String,
   },
   {
     timestamps: true,

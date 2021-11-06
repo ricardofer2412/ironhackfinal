@@ -11,15 +11,25 @@ const SALT_ROUNDS = 10;
 const User = require("../models/User.model");
 
 router.post("/signup", (req, res, next) => {
-  const { username, password } = req.body;
+  const {
+    username,
+    password,
+    role,
+    userImg,
+    firstName,
+    lastName,
+    active,
+    userEmail,
+  } = req.body;
 
-  console.log("User", username);
+  console.log("User", req.body);
 
   if (!username || !password) {
     res.status(400).json({ message: "Provide username and password" });
     return;
   }
 
+  console.log("passed");
   // make sure passwords are strong:
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
@@ -30,17 +40,19 @@ router.post("/signup", (req, res, next) => {
     return;
   }
 
+  console.log("passed");
   bcryptjs
     .genSalt(SALT_ROUNDS)
     .then((salt) => bcryptjs.hash(password, salt))
     .then((hashedPassword) => {
       return User.create({
-        // username: username
-        username,
-        // password => this is the key from the User model
-        //     ^
-        //     |            |--> this is placeholder (how we named returning value from the previous method (.hash()))
+        username: username,
         password: hashedPassword,
+        firstName: firstName,
+        lastName: lastName,
+        role: role,
+        active: true,
+        userEmail: userEmail,
       });
     })
     .then((userFromDB) => {
@@ -132,6 +144,11 @@ router.post("/login", (req, res, next) => {
       res.status(200).json(theUser);
     });
   })(req, res, next);
+});
+
+router.get("/users", (req, res, next) => {
+  console.log("get all users");
+  User.find().then((allUsers) => res.json(allUsers));
 });
 
 module.exports = router;

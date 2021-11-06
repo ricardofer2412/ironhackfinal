@@ -5,13 +5,11 @@ import Devices from "./phones.json";
 import Home from "./Components/Home";
 import Admin from "./Components/Admin";
 import NavBar from "./Components/NavBar";
-
 import Device from "./Components/Devices";
 import CarrierLinks from "./Components/Carrier/Routes";
 import Storage from "./Components/Carrier";
 import Offers from "./Components/Offers";
 import UserForm from "./Components/UserForm";
-
 import Products from "./Components/Admin/Products";
 import SideBar from "./Components/Admin/SideBar";
 import NewProduct from "./Components/Admin/NewProduct";
@@ -20,6 +18,8 @@ import Signup from "./Components/auth/Signup";
 import authService from "./Components/auth/auth-services";
 import Login from "./Components/auth/Login";
 import ProtectedRoute from "./Components/auth/ProtectedRoute";
+import Users from "./Components/Admin/Users/Users";
+import CreateUser from "./Components/Admin/Users/CreateUser";
 class App extends React.Component {
   state = {
     isLoggedIn: false,
@@ -59,11 +59,7 @@ class App extends React.Component {
       <div className="App">
         <Router>
           <NavBar />
-          {/* <AdminNavBar
-            userData={this.state.user}
-            userIsLoggedIn={this.state.isLoggedIn}
-            getUser={this.getTheUser}
-          /> */}
+
           <Route path="/admin" exact>
             <Admin />
           </Route>
@@ -108,7 +104,18 @@ class App extends React.Component {
               path="/admin/products/:id"
               component={EditProduct}
             />
-
+            <ProtectedRoute
+              user={this.state.user}
+              exact
+              path="/admin/users"
+              component={Users}
+            />
+            <ProtectedRoute
+              user={this.state.user}
+              exact
+              path="/admin/createuser"
+              component={CreateUser}
+            />
             <Route exact path="/:phone" component={Device} />
             <Route
               exact
