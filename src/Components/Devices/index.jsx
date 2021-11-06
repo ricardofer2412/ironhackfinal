@@ -18,7 +18,7 @@ export default function Devices() {
     
     return (
         <div>
-            {<h1>This is all {phoneName}  models we buy!</h1>}
+            {/* {<h1>This is all {phoneName}  models we buy!</h1>}
             <div className="phone-listing">
                 {devices.map(phone => 
                  
@@ -31,8 +31,8 @@ export default function Devices() {
                         </section>
                         )
                     }) 
-                )}
-            </div>
+                )} */}
+            {/* </div> */}
         </div>
     )
 }
