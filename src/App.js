@@ -11,7 +11,7 @@ import CarrierLinks from "./Components/Carrier/Routes";
 import Storage from './Components/Carrier'
 import Offers from "./Components/Offers"
 import UserForm from './Components/UserForm'
-
+import Confirm from "./Components/Confirmation";
 
 import Products from "./Components/Admin/Products";
 import SideBar from "./Components/Admin/SideBar";
@@ -82,10 +82,14 @@ render(){
               path="/login"
               render={(props) => <Login {...props} getUser={this.getTheUser} />}
             />
+              <Route
+                exact path='/thankyou'
+                render={() => <Confirm/>}
+               />
               <Route path="/" exact>
                 <Home/>
               </Route>
-              <Route path="/admin">
+              <Route exact path="/admin">
                 <Admin/>
               </Route>
               <Route exact path="/admin/products" component={Products}>
@@ -118,6 +122,7 @@ render(){
                 exact path='/:phone/:device/:carrier/:storage/userform'
                 render={() => <UserForm />}
               />
+              
             </Switch>
         </Router>
       

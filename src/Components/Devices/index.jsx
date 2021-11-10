@@ -8,6 +8,7 @@ export default function Devices() {
 
     
     let phonePath = useParams().phone
+    console.log(phonePath)
     let phoneName;
 
     if(phonePath.charAt(0) === 'i'){

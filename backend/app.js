@@ -23,7 +23,8 @@ const index = require("./routes/index");
 const productRouter = require("./routes/Product.routes");
 app.use("/", index);
 app.use("/api", productRouter);
-
+const orderRoutes = require("./routes/order.routes")
+app.use("/api", orderRoutes);
 const authRouter = require("./routes/auth.routes");
 app.use("/api", authRouter);
 
