@@ -9,6 +9,7 @@ const SALT_ROUNDS = 10;
 
 // require the user model !!!!
 const User = require("../models/User.model");
+const Product = require("../models/Product.model");
 
 router.post("/signup", (req, res, next) => {
   const {
@@ -146,6 +147,14 @@ router.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
+
+router.get('/getPrices', (req, res, next) => {
+    const {model, memory, carrier} = req.params;
+
+    Product.findOne({model: model, memory: memory, carrier: carrier})
+    .then((response)=> console.log(response))
+    .catch((err)=>console.log(err));
+})
 router.get("/users", (req, res, next) => {
   console.log("get all users");
   User.find().then((allUsers) => res.json(allUsers));

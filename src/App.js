@@ -7,9 +7,11 @@ import Admin from "./Components/Admin";
 import NavBar from "./Components/NavBar";
 import Device from "./Components/Devices";
 import CarrierLinks from "./Components/Carrier/Routes";
-import Storage from "./Components/Carrier";
-import Offers from "./Components/Offers";
-import UserForm from "./Components/UserForm";
+import Storage from './Components/Carrier'
+import Offers from "./Components/Offers"
+import UserForm from './Components/UserForm'
+import Confirm from "./Components/Confirmation";
+
 import Products from "./Components/Admin/Products";
 import SideBar from "./Components/Admin/SideBar";
 import NewProduct from "./Components/Admin/NewProduct";
@@ -58,7 +60,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          {/* <NavBar /> */}
+          {/* <NavBar />  */}
 
           <Route path="/admin" exact>
             <Admin />
@@ -76,6 +78,10 @@ class App extends React.Component {
               path="/login"
               render={(props) => <Login {...props} getUser={this.getTheUser} />}
             />
+            <Route
+                exact path='/thankyou'
+                render={() => <Confirm/>}
+               />
             <Route path="/" exact>
               <Home />
             </Route>

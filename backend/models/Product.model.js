@@ -6,7 +6,7 @@ const productSchema = new Schema({
   model: String,
   carrier: String,
   price: Number,
-  memory: String,
+  storage: String,
 });
 
 module.exports = model("Product", productSchema);

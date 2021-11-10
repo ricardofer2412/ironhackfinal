@@ -1,29 +1,65 @@
 import {React, useState} from 'react'
+import {useParams, useHistory} from 'react-router-dom'
+import { Form, Field} from 'react-final-form'
+import { TextField, Button, Autocomplete, ToggleButton, ToggleButtonGroup} from '@mui/material';
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+import axios from 'axios'
 import states from '../../states.json'
-import {useParams} from 'react-router-dom'
-import  {Button} from '@mui/material';
-import { Form, Field, useForm} from 'react-final-form'
-import { TextField } from '@mui/material';
-import { Autocomplete } from '@mui/material';
 
 export default function UserForm() {
 
+    const history = useHistory()
+    const today = new Date();
+
+    const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    const payDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()+5)
     let phone = useParams()
     let [selectedState, setSelectedState ]= useState('')
+    let [value, setValue] = useState()
+    const [payment, setPayment] = useState('Paypal');
     
 
+    
     const onChangeHandler = event => {
         let state = event.target.innerHTML
         setSelectedState(state)
 
     }
+    const handleChange = (event, newPayment) => {
+        setPayment(newPayment);
+      };
+
+
 
     return(
          <Form
-        onSubmit={formObj=>{
-            console.log(formObj)
-            console.log(selectedState)
-        }}
+            onSubmit={(formObj) =>{
+                
+            formObj.state = selectedState;
+            const newOrder = {
+                "product": phone,
+                "vendor": formObj,
+                "orderNumber": 1,
+                "orderDate": date,
+                "paymentDate": payDate,
+                "paymentMethod": formObj.payment,
+                "orderStatus": "Submitted",
+            }
+            
+            console.log({newOrder, formObj})
+            axios
+                .post('http://localhost:5000/api/newOrder', newOrder)
+                .then(response =>{
+                    console.log(response);
+                    
+                })
+            .catch(err => console.log(err))
+            
+            history.push('/thankyou')
+            }
+            }
+            
         >
         {({handleSubmit})=>(
             <form className="user-form" onSubmit={handleSubmit}>
@@ -45,6 +81,27 @@ export default function UserForm() {
                                 label="Email" 
                                 variant="standard" 
                                 {...input}/> 
+                        </div>
+                        )}
+                </Field>
+                <Field name="phoneNumber">
+                    {({input})=>(
+                        <div className="box-sizing">
+                                <PhoneInput
+                                    style={{ 
+                                        width:'21vw',
+                                        marginBottom: '0.5vh'
+                                    }}
+                                    country={'us'}
+                                    placeholder="Enter phone number"
+                                    value={value}
+                                    onChange={setValue}
+                                    {...input}
+                                    inputProps={{
+                                        name: 'phoneNumber',
+                                        required: true,
+                                    }}
+                                />
                         </div>
                         )}
                 </Field>
@@ -78,15 +135,20 @@ export default function UserForm() {
                             </div>
                         )}
                 </Field>
-                <Autocomplete
+                <Field name="state">
+                      {({input})=>(
+                        <Autocomplete
                             disablePortal
                             id="combo-box-demo"
                             style={{marginTop:'3vh'}}
                             options={states.map((state, key) => state.name)}
                             sx={{ width: '20vw' }}
-                            renderInput={(params)=> <Field name="state">{({input})=>(<TextField {...params} label='State' {...input}/>)}</Field> }
+                            renderInput={({...props})=><TextField label='State' {...props}/>}
                             onChange={onChangeHandler}
                         />
+                      )}  
+                </Field>
+               
                 <Field name="zipcode">
                     {({input})=>(
                             <div  className="box-sizing">
@@ -97,11 +159,26 @@ export default function UserForm() {
                             </div>
                         )}
                 </Field>
-                <Button style={{marginTop: '30px'}} variant='contained' type='submit'>Submit</Button>
+                <Field name="payment">
+                    {({input})=>(
+                            <div  className="box-sizing">
+                                <ToggleButtonGroup
+                                    color="primary"
+                                    value={payment}
+                                    exclusive
+                                   onChange={handleChange}
+                                   {...input}
+                                >
+                                    <ToggleButton value="Check">Check</ToggleButton>
+                                    <ToggleButton value="Paypal">Paypal</ToggleButton>
+
+                                </ToggleButtonGroup>
+                            </div>
+                        )}
+                </Field>
+                    <Button style={{marginTop: '30px'}} variant='contained' type='POST' >Submit</Button>
             </form>
         )}
     </Form>
     )
-   
-       
 }
