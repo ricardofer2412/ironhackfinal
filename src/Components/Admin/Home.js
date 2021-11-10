@@ -4,6 +4,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="main-content">
+        <div>navbar</div>
         <div className="widget-container">
           <div className="widget">
             <h2>Order Count</h2>

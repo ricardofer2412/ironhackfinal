@@ -58,7 +58,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <NavBar />
+          {/* <NavBar /> */}
 
           <Route path="/admin" exact>
             <Admin />
