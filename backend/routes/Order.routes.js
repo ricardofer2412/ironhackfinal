@@ -3,28 +3,61 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const Order = require("../models/Order.model")
 const Vendor = require("../models/Vendor.model")
+const OrderNumber = require("../models/OrderNumbers.model")
+
 
 router.post('/newOrder',  (req, res)=>{
-    // console.log(req.body)
-    const {product, 
-        vendor, orderNumber, orderDate, paymentDate, 
+    let {product, 
+        vendor, orderDate, paymentDate, 
         paymentMethod, orderStatus} = req.body;
 
-    const userEmail = vendor.email;
+    let randomNumber = Math.floor(100000 + Math.random() * 900000);
 
-     
-    Order.create({
-        'product': product, 
-        "vendor":vendor, 
-        "orderNumber":orderNumber, 
-        'orderDate':orderDate, 
-        "paymentDate":paymentDate, 
-        'paymentMethod':paymentMethod, 
-        'orderStatus':orderStatus}).then((response)=>{
-        console.log(response)
+    OrderNumber.find({orderNumbers: randomNumber})
+    .then(response => {
+        if(response.length === 0){
+        console.log("does not exist")
+        OrderNumber.create({"orderNumbers": randomNumber})
+        .then((response) => {
+            console.log(response)
+            Order.create({
+                'product': product,
+                "vendor":vendor, 
+                "orderNumber":randomNumber, 
+                'orderDate':orderDate, 
+                "paymentDate":paymentDate, 
+                'paymentMethod':paymentMethod, 
+                'orderStatus':orderStatus}).then((response)=>{
+                console.log(response)
+            })
+        })//adds the order number to the database
+                    console.log("randomNumber", randomNumber)
+        }else{
+            randomNumber = Math.floor(100000 + Math.random() * 900000);
+                OrderNumber.create({"orderNumbers": randomNumber})
+                .then((response) => {
+                console.log(response)
+                Order.create({
+                    'product': product,
+                    "vendor":vendor, 
+                    "orderNumber":randomNumber, 
+                    'orderDate':orderDate, 
+                    "paymentDate":paymentDate, 
+                    'paymentMethod':paymentMethod, 
+                    'orderStatus':orderStatus}).then((response)=>{
+                    console.log(response)
+                })
+        })
+        }
     })
+
 })
     
+router.post('/orderNumber', (req, res) => {
+    
+   
+})
+
     // Vendor.findOne({userEmail})
     // .then((user)=>{
     //     if(!user) {

@@ -1,0 +1,118 @@
+body{
+    background-color: rgb(241, 241, 241);
+}
+
+.mainDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.firstHeader > section > a{
+    text-decoration: none;
+}
+.firstHeader{
+    margin: 10%;
+    display: flex;
+    height: 65vh;
+}
+
+/* .firstHeader > section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+.phonesHomePageImage{
+    height: 45vh;
+    box-shadow: 5px 5px 5px rgb(194, 194, 194);
+}
+
+.sellYourDevicesSection{
+    margin-left: 40px;
+    text-align: left;
+}
+
+.phoneListDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.phoneList{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    border-radius: 7px;
+    margin-top: 5vh;
+    background-color: white;
+    width: 40vw;
+    height: 80vh;
+    box-shadow: 5px 5px 5px rgb(194, 194, 194);
+}
+
+
+
+.phoneList > div{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+}
+.phoneList > div> :nth-child(2) {
+   margin-top: 7px;
+   text-decoration: none;
+}
+
+.devicesStyle{
+    height: 25vh;
+}
+
+#sell{
+    background-color: rgb(221, 221, 221);
+    padding: 5%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content:space-evenly;
+}
+
+footer{
+    height: 12vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 5px 5px 5px 5px rgb(99, 98, 98);
+}
+
+.footerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 37.5vw;
+    margin-left:5vw;
+    text-decoration: none;
+}
+.footerContainer > *{
+    color: rgb(78, 78, 78);
+    text-decoration: none;
+}
+.footerLogo{
+    width: 5vw;
+    display: flex;
+   
+  }
+
+  .secondFooterContainer {
+      width: 37.5vw;
+      margin-right: 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .secondFooterContainer > *{
+      color: rgb(48, 47, 47);
+      text-decoration: none;
+  }

@@ -10,9 +10,9 @@ import states from '../../states.json'
 export default function UserForm() {
 
     const history = useHistory()
-    const today = new Date();
+    const today = new Date(); //gets the date
 
-    const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); 
     const payDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()+5)
     let phone = useParams()
     let [selectedState, setSelectedState ]= useState('')
@@ -24,23 +24,37 @@ export default function UserForm() {
     const onChangeHandler = event => {
         let state = event.target.innerHTML
         setSelectedState(state)
-
-    }
+    } //gets the selected state and sets it as usestate 
     const handleChange = (event, newPayment) => {
         setPayment(newPayment);
-      };
+      };//gets the value of the selected payment method and sets it as usePayment
+    
+    // const arrOfOrders = [1];
+    // let orderNumber;
 
+    // const doesItExist = () =>{
+    //     let randomNumber = Math.floor(100000 + Math.random() * 900000)
+    //     if(arrOfOrders.includes(randomNumber)){
+    //         return doesItExist()
+    //     }else{
+    //         console.log('does not exist', arrOfOrders)
+    //         orderNumber = randomNumber;
+    //         arrOfOrders.push(randomNumber)
+    //     }
+    // }
 
-
+    
     return(
          <Form
             onSubmit={(formObj) =>{
-                
+            // doesItExist();
+       
+            
             formObj.state = selectedState;
             const newOrder = {
                 "product": phone,
                 "vendor": formObj,
-                "orderNumber": 1,
+                "orderNumber": '',
                 "orderDate": date,
                 "paymentDate": payDate,
                 "paymentMethod": formObj.payment,
@@ -171,7 +185,8 @@ export default function UserForm() {
                                 >
                                     <ToggleButton value="Check">Check</ToggleButton>
                                     <ToggleButton value="Paypal">Paypal</ToggleButton>
-
+                                    <ToggleButton value="Amazon">Amazon</ToggleButton>
+                                    <ToggleButton value="Debit">Debit</ToggleButton>
                                 </ToggleButtonGroup>
                             </div>
                         )}
