@@ -11,18 +11,20 @@ class NewProduct extends Component {
       carrier: "",
       memory: "",
       price: "",
+      category: ''
     };
   }
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { model, carrier, memory, price } = this.state;
+    const { model, carrier, memory, price, category } = this.state;
     axios
       .post("http://localhost:5000/api/products", {
         model,
         carrier,
         memory,
         price,
+        category
       })
       .then(() => {
         this.setState({
@@ -30,6 +32,7 @@ class NewProduct extends Component {
           price: "",
           memory: "",
           carrier: "",
+          category: ''
         });
         // alert("New Product Added");
         const { history } = this.props;
@@ -44,7 +47,7 @@ class NewProduct extends Component {
   };
 
   render() {
-    const { model, carrier, memory, price } = this.state;
+    const { model, carrier, memory, price,  category } = this.state;
     return (
       <div className="admin-main">
         <SideBar />
@@ -69,6 +72,13 @@ class NewProduct extends Component {
               type="text"
               name="memory"
               value={memory}
+              onChange={(e) => this.handleChange(e)}
+            />s
+            <label> Category</label>
+            <input
+              type="text"
+              name="category"
+              value={category}
               onChange={(e) => this.handleChange(e)}
             />
             <label> Price</label>

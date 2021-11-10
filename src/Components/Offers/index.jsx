@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Devices from '../../phones.json'
 import {useParams, Link} from 'react-router-dom'
-
+import axios from "axios";
 export default function Offers() {
+
+
+    const [price, setPrice] = useState(0)
+
     
-
-
-
-
     let path = useParams()
   
     let phonePath = useParams().device //GETS THE PATH TO THE PHONE
@@ -17,7 +17,7 @@ export default function Offers() {
     let carrier;
 
 
-    console.log(phoneStorage)
+    console.log(path.phone)
     if(useParams().carrier.charAt(0) === 't'){
         carrier = phoneCarrier.split("-")[0].toUpperCase() + '-' + phoneCarrier.split("-")[1].charAt(0).toUpperCase() + phoneCarrier.slice(3)
     }else if(phoneCarrier.charAt(0) === 'a'){
@@ -31,6 +31,20 @@ export default function Offers() {
      .find((phone)=>
          phone.path === phonePath
      ) //RETUNRS THE DEVICE THAT MATCHES THE ONE ON PARAMS
+
+
+     useEffect(() => {
+
+
+        axios.post('http://localhost:5000/api/product/getprice' , 
+        {carrier: phoneCarrier, memory: phoneStorage, model: deviceDetails.name, category: path.phone }).then((response) => {
+            console.log('executed')
+            console.log(response.data)
+            const phoneData = response.data
+            console.log(phoneData)
+            setPrice(phoneData[0].price)
+        })
+    })
 
     return (
         <div>
@@ -50,7 +64,7 @@ export default function Offers() {
                     <div className='offer-div'>
                         <h1>Your BuyBack Offer</h1>
                         <h3>Perfect Condition</h3>
-                        <h4 className='amount'>$400</h4>
+                        <h4 className='amount'>${price}</h4>
                         <p>This is an estimate until inspection passes</p>
                    
                         <button className='get-paid-btn'><Link to={`/${path.phone}/${phonePath}/${phoneCarrier}/${phoneStorage}/userform`}>Get Paid</Link></button>

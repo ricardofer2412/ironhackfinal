@@ -7,6 +7,7 @@ const productSchema = new Schema({
   carrier: String,
   price: Number,
   storage: String,
+  category:String
 });
 
 module.exports = model("Product", productSchema);
