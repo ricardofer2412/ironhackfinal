@@ -6,8 +6,8 @@ const productSchema = new Schema({
   model: String,
   carrier: String,
   price: Number,
-  storage: String,
-  category:String
+  memory: String,
+  category: String,
 });
 
 module.exports = model("Product", productSchema);

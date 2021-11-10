@@ -41,8 +41,7 @@ export default function Offers() {
             console.log('executed')
             console.log(response.data)
             const phoneData = response.data
-            console.log(phoneData)
-            setPrice(phoneData[0].price)
+            setPrice(phoneData[0].price)        
         })
     })
 
