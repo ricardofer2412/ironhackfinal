@@ -1,0 +1,14 @@
+.users-main {
+  display: flex;
+}
+
+.widget-container-div {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color: rgb(237, 235, 235);
+}
+
+.table {
+  padding: 40px;
+}

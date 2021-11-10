@@ -7,9 +7,9 @@ import Admin from "./Components/Admin";
 import NavBar from "./Components/NavBar";
 import Device from "./Components/Devices";
 import CarrierLinks from "./Components/Carrier/Routes";
-import Storage from './Components/Carrier'
-import Offers from "./Components/Offers"
-import UserForm from './Components/UserForm'
+import Storage from "./Components/Carrier";
+import Offers from "./Components/Offers";
+import UserForm from "./Components/UserForm";
 import Confirm from "./Components/Confirmation";
 
 import Products from "./Components/Admin/Products";
@@ -22,6 +22,8 @@ import Login from "./Components/auth/Login";
 import ProtectedRoute from "./Components/auth/ProtectedRoute";
 import Users from "./Components/Admin/Users/Users";
 import CreateUser from "./Components/Admin/Users/CreateUser";
+import Order from "./Components/Admin/Order";
+
 class App extends React.Component {
   state = {
     isLoggedIn: false,
@@ -62,9 +64,9 @@ class App extends React.Component {
         <Router>
           {/* <NavBar />  */}
 
-          <Route path="/admin" exact>
+          {/* <Route path="/admin" exact>
             <Admin />
-          </Route>
+          </Route> */}
           <Switch>
             <Route
               exact
@@ -78,10 +80,7 @@ class App extends React.Component {
               path="/login"
               render={(props) => <Login {...props} getUser={this.getTheUser} />}
             />
-            <Route
-                exact path='/thankyou'
-                render={() => <Confirm/>}
-               />
+            <Route exact path="/thankyou" render={() => <Confirm />} />
             <Route path="/" exact>
               <Home />
             </Route>
@@ -97,6 +96,12 @@ class App extends React.Component {
               exact
               path="/admin/products"
               component={Products}
+            />
+            <ProtectedRoute
+              user={this.state.user}
+              exact
+              path="/admin/orders"
+              component={Order}
             />
             <ProtectedRoute
               user={this.state.user}
