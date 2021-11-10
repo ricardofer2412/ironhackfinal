@@ -5,6 +5,9 @@ import {useParams, Link} from 'react-router-dom'
 export default function Offers() {
     
 
+
+
+
     let path = useParams()
   
     let phonePath = useParams().device //GETS THE PATH TO THE PHONE

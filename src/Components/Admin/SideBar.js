@@ -10,7 +10,7 @@ export default function SideBar() {
       <Link to="/admin/products">Products</Link>
 
       <h3>Products</h3>
-      <h3>Users</h3>
+      <Link to="/admin/users">Users</Link>
     </div>
   );
 }

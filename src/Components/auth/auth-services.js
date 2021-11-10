@@ -7,9 +7,27 @@ class AuthService {
       withCredentials: true,
     });
   }
-  signup = (username, password) => {
+  signup = (
+    username,
+    password,
+    role,
+    userImg,
+    firstName,
+    lastName,
+    active,
+    userEmail
+  ) => {
     return this.service
-      .post("/signup", { username, password })
+      .post("/signup", {
+        username,
+        password,
+        role,
+        userImg,
+        firstName,
+        lastName,
+        active,
+        userEmail,
+      })
       .then((response) => response.data);
   };
 

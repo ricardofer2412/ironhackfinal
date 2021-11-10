@@ -15,7 +15,12 @@ class Login extends Component {
         this.setState({ username: "", password: "" });
         this.props.getUser(response, true);
         this.props.history.push("/admin");
+        this.setState({
+          userName: "",
+          password: "",
+        });
       })
+
       .catch((error) => console.log(error));
   };
 
@@ -50,11 +55,6 @@ class Login extends Component {
 
           <button type="submit"> Login </button>
         </form>
-
-        <p>
-          Don't have account?
-          <Link to={"/signup"}> Signup</Link>
-        </p>
       </div>
     );
   }
