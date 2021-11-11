@@ -60,15 +60,38 @@ export default function UserForm() {
                 "paymentMethod": formObj.payment,
                 "orderStatus": "Submitted",
             }
+
+
             
             console.log({newOrder, formObj})
-            axios
-                .post('http://localhost:5000/api/newOrder', newOrder)
-                .then(response =>{
-                    console.log(response);
+
+            const {name, payment, email} = formObj
+            console.log(email)
+            // axios
+            //     .post('http://localhost:5000/api/newOrder', newOrder)
+            //     .then(response =>{
+            //         console.log(response);
                     
-                })
-            .catch(err => console.log(err))
+            //     })
+            // .catch(err => console.log(err))
+
+            
+            axios({
+                method: "POST", 
+                url:"http://localhost:5000/api/sendConfirmation", 
+                data: {
+                    name: name,   
+                    email: email,  
+                   
+                }
+            }).then((response)=>{
+                if (response.data.msg === 'success'){
+                    alert("Message Sent."); 
+                    this.resetForm()
+                }else if(response.data.msg === 'fail'){
+                    alert("Message failed to send.")
+                }
+            })
             
             history.push('/thankyou')
             }

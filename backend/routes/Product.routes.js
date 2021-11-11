@@ -7,15 +7,22 @@ const Products = require("../models/Product.model");
 router.post("/products", (req, res, next) => {
   const { model, memory, carrier, price } = req.body;
 
+  console.log(req.body)
+
   Products.create({
-    model,
-    memory,
-    carrier,
-    price,
+    model: model,
+    memory: memory,
+    carrier: carrier,
+    price: price,
   })
-    .then((response) => res.json(response))
+    .then((response) => {
+    console.log(response)
+    res.json(response)})
     .catch((err) => res.json(err));
 });
+
+
+
 router.get("/products", (req, res, next) => {
   Products.find().then((allProducts) => res.json(allProducts));
 });
@@ -52,6 +59,17 @@ router.delete("/products/:productId", (req, res, next) => {
     )
     .catch((error) => res.json(error));
 });
+
+router.post('/product/getprice', (req, res, net) => {
+
+  const { model, carrier, category, memory } = req.body
+  Products.find({model: { $eq: model}})
+  .then((response) => {{
+    console.log('Reponse from server', response)
+    res.json(response);
+  }})
+
+})
 
 
 module.exports = router;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SideBar from "./SideBar";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 class Products extends Component {
   state = {
@@ -37,6 +38,7 @@ class Products extends Component {
       <div className="admin-main">
         <SideBar />
         <div className="main-content">
+          <Navbar />
           <h3>Product List</h3>
           <Link to="/admin/products/newproduct">
             <button>Create New Product</button>
