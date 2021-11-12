@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import Button from '@mui/material/Button';
 import NavBar from '../../Components/NavBar'
-
+import Footer from '../../Components/Footer'
 //import styles
 import './index.css'
 
@@ -12,7 +12,7 @@ import iphone from '../../images/iphone.jpeg'
 import samsung from '../../images/samsung.jpeg'
 import pixel from '../../images/pixel.jpeg'
 import ipad from '../../images/ipad.jpeg'
-import logo from '../../images/Black logo - no background.svg'
+
 
 export default function Home() {
     return (
@@ -56,8 +56,10 @@ export default function Home() {
                         <div>
                             <img className="devicesStyle" src={iphone} alt="all of the phone images" />
                             <Link to='/iphone'>
-                                <Button style={{"borderColor": 'grey',
-                                                 "color": 'grey'}} variant="outlined"> 
+                                <Button 
+                                    style={{"borderColor": 'grey',
+                                            "color": 'grey'}} 
+                                    variant="outlined"> 
                                     iPhone
                                 </Button>
                             </Link>
@@ -92,31 +94,7 @@ export default function Home() {
                     </section>
 
                 </div>
-                <footer>
-                    <div className="footerContainer">
-                        <Link to='/faq'>FAQ</Link>
-                        <Link className="fontWidth" to='/track-order'>Track Order</Link>
-                        <Link className="fontWidth" to='/contact-us'>Contact us</Link>
-                    </div>
-                    <a className="footerLogo" href="#home"><img  className="footerLogo" src={logo} alt="logo" /></a>
-                    <div className="secondFooterContainer">
-                        <Link to='/iphone'>
-                            Sell iPhone
-                        </Link>
-                       <Link to='/samsung'>
-                            Sell Samsung
-                       </Link>
-                       <Link to='/pixel'>
-
-                            Sell Pixel
-                       </Link>
-                        <Link to='ipad'>
-                            Sell iPad
-                        </Link>
-                       
-                    </div>
-                                
-                </footer>
+                <Footer/>
             </div>
             
         </div>

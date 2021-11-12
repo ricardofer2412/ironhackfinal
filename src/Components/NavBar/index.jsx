@@ -13,6 +13,7 @@ export default function NavBar() {
                 <Link to='/faq'>FAQ</Link>
                 <Link className="fontWidth" to='/track-order'>Track Order</Link>
                 <Link className="fontWidth" to='/contact-us'>Contact us</Link>
+                <Link className="fontWidth" to='/admin'>Admin</Link>
             </div>
           </div>
       </header>

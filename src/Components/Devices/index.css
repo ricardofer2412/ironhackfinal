@@ -1,0 +1,36 @@
+.body-div{
+    margin: 5%;
+    margin-top: 3%;
+}
+
+
+.phone-listing{
+    margin: 7%;
+    flex-wrap: wrap;
+}
+
+.link-style{
+    margin: 1%;
+    text-decoration: none;
+    color: black;
+}
+
+.device-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #e0e0e0;
+    width: 15vw;
+    height: 30vh;
+    margin: 2%;
+    padding: 2.5em;
+   border-radius: 2px;
+}
+
+
+.device-box:hover{
+    box-shadow: 2px 2px 2px black;
+    color: black;
+}

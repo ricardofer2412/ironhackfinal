@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {useParams} from 'react-router-dom'
 import devices from "../../phones.json"
-
+import './index.css'
 
 export default function Devices() {
 
@@ -18,18 +18,21 @@ export default function Devices() {
     }
     
     return (
-        <div>
+        <div className="body-div">
             {<h1>This is all {phoneName}  models we buy!</h1>}
+
             <div className="phone-listing">
                 {devices.map(phone => 
                  
                      phone.phone[0][phoneName].models.map(model => {
                         return (
-                        <section>
-                            <img className="iphone-images" src={model.image} alt={model.path}/>
-                            <Link to={`/${phonePath}/${model.path}`}>{model.name}</Link>
+                            <Link className="link-style" to={`/${phonePath}/${model.path}`}>
+                                <section className="device-box">
+                                    <img className="iphone-images" src={model.image} alt={model.path}/>
+                                    <p className="model-name">{model.name}</p>
+                                </section>
+                            </Link>
                             
-                        </section>
                         )
                     }) 
                 )}
