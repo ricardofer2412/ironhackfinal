@@ -53,13 +53,13 @@ export default function UserForm() {
 
             const {name, payment, email} = formObj
             console.log(email)
-            // axios
-            //     .post('http://localhost:5000/api/newOrder', newOrder)
-            //     .then(response =>{
-            //         console.log(response);
+            axios
+                .post('http://localhost:5000/api/newOrder', newOrder)
+                .then(response =>{
+                    console.log(response);
                     
-            //     })
-            // .catch(err => console.log(err))
+                })
+            .catch(err => console.log(err))
 
             
             axios({
