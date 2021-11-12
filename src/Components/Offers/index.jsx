@@ -32,16 +32,26 @@ export default function Offers() {
          phone.path === phonePath
      ) //RETUNRS THE DEVICE THAT MATCHES THE ONE ON PARAMS
 
+ 
 
      useEffect(() => {
 
 
         axios.post('http://localhost:5000/api/product/getprice' , 
-        {carrier: phoneCarrier, memory: phoneStorage, model: deviceDetails.name, category: path.phone }).then((response) => {
-            console.log('executed')
-            console.log(response.data)
+        {carrier: phoneCarrier, memory: phoneStorage, model: deviceDetails.name, category: path.phone })
+        .then((response) => {
+
+            console.log('response data', response.data)
             const phoneData = response.data
-            setPrice(phoneData[0].price)        
+      
+            if(phoneData.length === 0) {
+                //  setPrice(0)  
+                console.log('executed')
+                console.log('price null')
+            } 
+            else {
+                setPrice(phoneData[0].price)
+            }
         })
     })
 

@@ -6,32 +6,71 @@ const Vendor = require("../models/Vendor.model");
 const creds = require("./config");
 var nodemailer = require("nodemailer");
 
+const OrderNumber = require("../models/OrderNumbers.model");
+
 router.post("/newOrder", (req, res) => {
-  // console.log(req.body)
-  const {
-    product,
-    vendor,
-    orderNumber,
-    orderDate,
-    paymentDate,
-    paymentMethod,
-    orderStatus,
-  } = req.body;
+  let { product, vendor, orderDate, paymentDate, paymentMethod, orderStatus } =
+    req.body;
 
-  const userEmail = vendor.email;
+  let randomNumber = Math.floor(100000 + Math.random() * 900000);
 
-  Order.create({
-    product: product,
-    vendor: vendor,
-    orderNumber: orderNumber,
-    orderDate: orderDate,
-    paymentDate: paymentDate,
-    paymentMethod: paymentMethod,
-    orderStatus: orderStatus,
-  }).then((response) => {
-    console.log(response);
+  OrderNumber.find({ orderNumbers: randomNumber }).then((response) => {
+    if (response.length === 0) {
+      console.log("does not exist");
+      OrderNumber.create({ orderNumbers: randomNumber }).then((response) => {
+        console.log(response);
+        Order.create({
+          product: product,
+          vendor: vendor,
+          orderNumber: randomNumber,
+          orderDate: orderDate,
+          paymentDate: paymentDate,
+          paymentMethod: paymentMethod,
+          orderStatus: orderStatus,
+        }).then((response) => {
+          console.log(response);
+        });
+      }); //adds the order number to the database
+      console.log("randomNumber", randomNumber);
+    } else {
+      randomNumber = Math.floor(100000 + Math.random() * 900000);
+      OrderNumber.create({ orderNumbers: randomNumber }).then((response) => {
+        console.log(response);
+        Order.create({
+          product: product,
+          vendor: vendor,
+          orderNumber: randomNumber,
+          orderDate: orderDate,
+          paymentDate: paymentDate,
+          paymentMethod: paymentMethod,
+          orderStatus: orderStatus,
+        }).then((response) => {
+          console.log(response);
+        });
+      });
+    }
   });
 });
+
+// Vendor.findOne({userEmail})
+// .then((user)=>{
+//     if(!user) {
+//         console.log("NO USER FOUND")
+//         Vendor.create({
+//           "name": vendor.name,
+//           "email": vendor.email,
+//           "phoneNumber": vendor.phoneNumber,
+//           "address": vendor.address,
+//           "address2": vendor.address2,
+//           "city": vendor.city,
+//           "zipcode": vendor.zipcode,
+//           "state": vendor.state,
+//         }).then((response) => {
+
+//         })
+//     }else{
+//         console.log(user)
+//     }
 
 router.get("/orders", (req, res, next) => {
   Order.find().then((allOrders) => res.json(allOrders));
