@@ -84,7 +84,18 @@ class App extends React.Component {
             <Route path="/" exact>
               <Home />
             </Route>
-
+            <Route 
+                exact 
+                path='/faq'
+              />
+              <Route 
+                exact 
+                path='/track-order'
+              />
+              <Route 
+                exact 
+                path='/contact-us'
+              />
             <ProtectedRoute
               user={this.state.user}
               exact

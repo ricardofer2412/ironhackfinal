@@ -1,0 +1,65 @@
+.btn-style{
+    color: black;
+    display: block;
+}
+
+.container-link{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-end;
+    margin: 15%;
+    margin-top: 5%;
+    margin-bottom: 9.5%;
+}
+
+.styles{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+}
+.styles > p{
+    color: black;
+}
+
+.verizon-styles > img{
+    height: 6vh;
+    width: 10vw;
+    margin-bottom: 3px;;
+}
+
+.tmobile-styles > img{
+    height: 4vh;
+    width: 10vw;
+}
+
+.unlocked-styles{
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+}
+.unlocked-styles > :nth-child(1){
+    margin-top: 7px;
+}
+.other-styles{
+    height: 10vh;
+    text-align: center;
+}
+.other-styles > :nth-child(1) {
+    margin-top: 10px;
+}
+
+.imageStyles{
+    height: 30vh;
+}
+
+.phonePickContainer > h3{
+    margin-top: 4vh;
+}
+
+.phonePick{
+    margin-top: 1vh;
+}
+
+

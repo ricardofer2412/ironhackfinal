@@ -2,18 +2,23 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import '../../App.css'
 import authService from '../auth/auth-services';
-
+import logo from '../../images/WLnobackground.svg'
 export default function NavBar() {
     return (
        <header className="navBar">
-            <Link to='/iphone'>iPhone</Link>
-            <Link to='/samsung'>Samsung</Link>
-            <Link to='/pixel'>Pixel</Link>
-            <Link to='/ipad'>iPad</Link>
-            <Link to='/admin'>Admin</Link>
-            {/* <Link to='/macbook'>Macbook</Link> */}
+          <img className="logo" src={logo} alt="logo"/>
+          <div className="navDiv">
+            <div className="navItems">
+                <a href="#sell">Sell</a>
+                <Link to='/faq'>FAQ</Link>
+                <Link className="fontWidth" to='/track-order'>Track Order</Link>
+                <Link className="fontWidth" to='/contact-us'>Contact us</Link>
+                <Link className="fontWidth" to='/admin'>Admin</Link>
+            </div>
+          </div>
       </header>
     )
-}
-
- 
+  }
+  
+  
+  
