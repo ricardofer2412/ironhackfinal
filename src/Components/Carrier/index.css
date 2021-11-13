@@ -1,0 +1,53 @@
+
+.main-container{
+    height: 100%;
+}
+
+.storage-img{
+    height: 20vh;
+}
+
+.device-img{
+    height: 55vh;
+}
+
+.position-container{
+    margin: 10%;
+    margin-top: 0px;
+    margin-bottom: 5.8vh;
+    display: flex;
+    justify-content: space-evenly;
+    height: 75vh;
+}
+
+.storage-listing{
+    margin: 10%;
+    margin-left: 5%;
+    width: 40vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.order-styles{
+    display: flex;
+    align-items: center;
+
+}
+
+.order-styles > div{
+    margin-left: 50px;
+    width: 13vw;
+}
+
+.device-div{
+    margin: 10%;
+}
+
+.details-styling{
+    display: flex;
+}
+
+.btn-style{
+    width: 10vw;
+}

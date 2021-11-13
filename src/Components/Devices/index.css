@@ -1,7 +1,9 @@
 .body-div{
     margin: 5%;
-    margin-top: 3%;
+    margin-top: 0px;
 }
+
+
 
 
 .phone-listing{
@@ -19,18 +21,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    background-color: #e0e0e0;
+    color: black;
     width: 15vw;
     height: 30vh;
     margin: 2%;
-    padding: 2.5em;
-   border-radius: 2px;
+    border-radius: 15px;
+}
+
+.iphone-images{
+    height: 15vh;
+    width: 5vw;
 }
 
 
 .device-box:hover{
     box-shadow: 2px 2px 2px black;
+    background-color: #f9a825;
     color: black;
 }

@@ -1,0 +1,44 @@
+.top-container{
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+    margin-top:0;
+}
+
+.order-container{
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.order-details{
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ border: 1px  solid #ffa726 ;
+ width: 30vw;
+ height: 66vh;
+ padding: 5vh;
+}
+
+.order-details >  img{
+    height: 30vh;
+}
+
+
+
+.form-div{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.payment-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

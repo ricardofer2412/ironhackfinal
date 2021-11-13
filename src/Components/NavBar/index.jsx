@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import '../../App.css'
 import authService from '../auth/auth-services';
 import logo from '../../images/WLnobackground.svg'
+
 export default function NavBar() {
     return (
        <header className="navBar">
@@ -12,7 +13,7 @@ export default function NavBar() {
                 <a href="#sell">Sell</a>
                 <Link to='/faq'>FAQ</Link>
                 <Link className="fontWidth" to='/track-order'>Track Order</Link>
-                <Link className="fontWidth" to='/contact-us'>Contact us</Link>
+                <Link className="fontWidth" to='/contact-us'>Contact Us</Link>
                 <Link className="fontWidth" to='/admin'>Admin</Link>
             </div>
           </div>

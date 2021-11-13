@@ -20,7 +20,7 @@ export default function Carrier() {
                 
     const btnStyle = {
         'display': 'block', 
-        'color': 'black', 
+        'color': '#ef6c00', 
         'margin' : '10px',
     }
     //console.log(fullPhone)
@@ -30,7 +30,7 @@ export default function Carrier() {
             <div className="phonePickContainer">
                 <div className="phonePick"> 
                     <img className="imageStyles" src={device.image} alt={device.name}/>
-                    <h1>Great! You chose {device.name} to sell.</h1>
+                    <h1>Great! You chose the {device.name} to sell.</h1>
                 </div>
                 <h3>Now pick which carrier is your device.</h3>
             </div>
@@ -60,6 +60,4 @@ export default function Carrier() {
             <Footer/>
         </div>
     )
-
-    
 }

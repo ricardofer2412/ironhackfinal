@@ -11,7 +11,7 @@ import Storage from "./Components/Carrier";
 import Offers from "./Components/Offers";
 import UserForm from "./Components/UserForm";
 import Confirm from "./Components/Confirmation";
-
+import ScrollToTop from "./Components/ScrollToTop"
 import Products from "./Components/Admin/Products";
 import SideBar from "./Components/Admin/SideBar";
 import NewProduct from "./Components/Admin/NewProduct";
@@ -67,6 +67,7 @@ class App extends React.Component {
           {/* <Route path="/admin" exact>
             <Admin />
           </Route> */}
+          <ScrollToTop/>
           <Switch>
             <Route
               exact
