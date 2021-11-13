@@ -23,6 +23,7 @@ import ProtectedRoute from "./Components/auth/ProtectedRoute";
 import Users from "./Components/Admin/Users/Users";
 import CreateUser from "./Components/Admin/Users/CreateUser";
 import Order from "./Components/Admin/Order";
+import EditOrder from "./Components/Admin/EditOrder";
 
 class App extends React.Component {
   state = {
@@ -85,18 +86,9 @@ class App extends React.Component {
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route 
-                exact 
-                path='/faq'
-              />
-              <Route 
-                exact 
-                path='/track-order'
-              />
-              <Route 
-                exact 
-                path='/contact-us'
-              />
+            <Route exact path="/faq" />
+            <Route exact path="/track-order" />
+            <Route exact path="/contact-us" />
             <ProtectedRoute
               user={this.state.user}
               exact
@@ -130,8 +122,14 @@ class App extends React.Component {
             <ProtectedRoute
               user={this.state.user}
               exact
-              path="/admin/users"
-              component={Users}
+              path="/admin/products/:id"
+              component={EditProduct}
+            />
+            <ProtectedRoute
+              user={this.state.user}
+              exact
+              path="/admin/orders/:id"
+              component={EditOrder}
             />
             <ProtectedRoute
               user={this.state.user}

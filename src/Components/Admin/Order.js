@@ -10,6 +10,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Navbar from "./Navbar";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@material-ui/core/IconButton";
+import CreateIcon from "@mui/icons-material/Create";
 
 class Orders extends Component {
   state = {
@@ -32,14 +35,14 @@ class Orders extends Component {
     });
   };
 
-  //   deleteProduct = (product, e) => {
-  //     const { _id } = product;
-  //     axios.delete(`http://localhost:5000/api/products/${_id}`).then(() => {
-  //       alert("Product Deleted");
-  //       const { history } = this.props;
-  //       history.push("/admin/products");
-  //     });
-  //   };
+  deleteOrder = (order, e) => {
+    const { _id } = order;
+    axios.delete(`http://localhost:5000/api/orders/${_id}`).then(() => {
+      alert("Order has been Deleted");
+
+      this.getAllOrders();
+    });
+  };
 
   render() {
     return (
@@ -58,6 +61,8 @@ class Orders extends Component {
                     <TableCell align="right">email</TableCell>
                     <TableCell align="right">Payment</TableCell>
                     <TableCell align="right">Device</TableCell>
+                    <TableCell align="right">Status</TableCell>
+                    <TableCell align="right">Action</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -74,6 +79,20 @@ class Orders extends Component {
                       <TableCell align="right">
                         {order.product.device} {order.product.carrier}
                         {order.product.storage}
+                      </TableCell>
+                      <TableCell align="right">Pending</TableCell>
+                      <TableCell align="right">
+                        <DeleteIcon
+                          style={{ color: "red" }}
+                          onClick={() => this.deleteOrder(order)}
+                        />
+                        <IconButton
+                          component={Link}
+                          to={`/admin/orders/${order._id}`}
+                          style={{ backgroundColor: "white" }}
+                        >
+                          <CreateIcon />
+                        </IconButton>
                       </TableCell>
                     </TableRow>
                   ))}

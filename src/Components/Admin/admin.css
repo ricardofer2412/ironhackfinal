@@ -40,3 +40,55 @@
   color: gray;
   font-weight: 200;
 }
+
+.new_product_div {
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 75%;
+  background-color: white;
+  padding: 50px;
+  margin-top: 30px;
+}
+
+.text-div {
+  width: 100%;
+}
+
+#addProduct {
+  background-color: #5e35b1 !important;
+  color: white !important;
+  padding: 10px;
+  width: 200px;
+  height: 50px;
+  border-radius: 5px !important;
+}
+
+.add-div {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 40px;
+}
+
+.submit-button {
+  background-color: #5e35b1 !important;
+  height: 50px;
+  border-radius: 5px !important;
+  color: white !important;
+  margin-top: 10px;
+}
+
+.submit-div {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#cancelButton {
+  background-color: #ffa726 !important;
+  height: 50px;
+  border-radius: 5px !important;
+  color: white !important;
+  margin-top: 10px;
+}
