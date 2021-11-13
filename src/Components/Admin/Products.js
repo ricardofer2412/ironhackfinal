@@ -3,7 +3,21 @@ import SideBar from "./SideBar";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
-
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import DeleteIcon from "@mui/icons-material/Delete";
+import CreateIcon from "@mui/icons-material/Create";
+import IconButton from "@material-ui/core/IconButton";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import Button from "@mui/material/Button";
+import AddIcon from "@mui/icons-material/Add";
+import "./index.css";
+import "./admin.css";
 class Products extends Component {
   state = {
     productList: [],
@@ -28,8 +42,11 @@ class Products extends Component {
     const { _id } = product;
     axios.delete(`http://localhost:5000/api/products/${_id}`).then(() => {
       alert("Product Deleted");
-      const { history } = this.props;
-      history.push("/admin/products");
+
+      // const { history } = this.props;
+      // history.push("/admin/products");
+
+      this.getAllProducts();
     });
   };
 
@@ -39,36 +56,66 @@ class Products extends Component {
         <SideBar />
         <div className="main-content">
           <Navbar />
-          <h3>Product List</h3>
-          <Link to="/admin/products/newproduct">
-            <button>Create New Product</button>
-          </Link>
           <div>
-            {this.state.productList === null ? (
-              <div>
-                <p>NO DATA</p>
-              </div>
-            ) : (
-              <div>
-                {" "}
-                Data
-                {this.state.productList.map((product) => (
-                  <div className="dataTable">
-                    <p>{product.model}</p>
-                    <p>{product.carrier}</p>
-                    <p>{product.memory}</p>
-                    <p>{product.price}</p>
-                    <button onClick={() => this.deleteProduct(product)}>
-                      Delete
-                    </button>
+            <h3>Product List</h3>
+          </div>
+          <div className="add-div">
+            <Button
+              id="addProduct"
+              viant="contained"
+              to="/admin/products/newproduct"
+              startIcon={<AddIcon />}
+              component={Link}
+            >
+              New Product
+            </Button>
+          </div>
 
-                    <Link to={`/admin/products/${product._id}`}>
-                      <p>Edit</p>
-                    </Link>
-                  </div>
-                ))}{" "}
-              </div>
-            )}
+          <div className="table">
+            <TableContainer component={Paper}>
+              <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="right">Model</TableCell>
+                    <TableCell align="right">Carrier</TableCell>
+                    <TableCell align="right">Memory</TableCell>
+                    <TableCell align="right">Price</TableCell>
+                    <TableCell align="right">Actions</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {this.state.productList.map((product) => (
+                    <TableRow
+                      key={product._id}
+                      sx={{
+                        "&:last-child td, &:last-child th": { border: 0 },
+                      }}
+                    >
+                      <TableCell align="right">{product.model}</TableCell>
+                      <TableCell align="right">{product.carrier}</TableCell>
+                      <TableCell align="right">{product.memory}</TableCell>
+                      <TableCell align="right">${product.price}</TableCell>
+                      <TableCell align="right">
+                        <DeleteIcon
+                          style={{ color: "red" }}
+                          onClick={() => this.deleteProduct(product)}
+                        />
+                        <IconButton
+                          component={Link}
+                          to={`/admin/products/${product._id}`}
+                          style={{ backgroundColor: "white" }}
+                        >
+                          <CreateIcon />
+                        </IconButton>
+                        {/* // <Link to={`/admin/products/${product._id}`}>
+                        //   <p>Edit</p>
+                        // </Link> */}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </div>
         </div>
       </div>

@@ -76,6 +76,29 @@ router.get("/orders", (req, res, next) => {
   Order.find().then((allOrders) => res.json(allOrders));
 });
 
+router.delete("/orders/:orderId", (req, res, next) => {
+  const { orderId } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(orderId)) {
+    res.status(400).json({ message: "Invalid ID" });
+    return;
+  }
+
+  Order.findByIdAndDelete(orderId)
+    .then(() =>
+      res.json({ message: `Product with ${orderId} has been deleted` })
+    )
+    .catch((error) => res.json(error));
+});
+router.get("/orders/:orderId", (req, res, next) => {
+  console.log("test");
+
+  const { orderId } = req.params;
+  console.log(orderId);
+  Order.findById(orderId).then((order) => {
+    res.json(order);
+  });
+});
+
 // Vendor.findOne({userEmail})
 // .then((user)=>{
 //     if(!user) {
