@@ -36,7 +36,7 @@ export default function Home() {
                             <Button style={{
                                 "borderColor": 'grey', 
                                 "color": 'white', 
-                                "backgroundColor":'grey',
+                                "backgroundColor":'#f57c00',
                                 }} variant="contained">
                                     Sell Your Phone
                             </Button>
@@ -57,9 +57,9 @@ export default function Home() {
                             <img className="devicesStyle" src={iphone} alt="all of the phone images" />
                             <Link to='/iphone'>
                                 <Button 
-                                    style={{"borderColor": 'grey',
-                                            "color": 'grey'}} 
-                                    variant="outlined"> 
+                                    style={{"backgroundColor": '#f57c00',
+                                            "color": 'white'}} 
+                                    variant="contained"> 
                                     iPhone
                                 </Button>
                             </Link>
@@ -67,8 +67,8 @@ export default function Home() {
                         <div>
                             <img className="devicesStyle" src={samsung} alt="all of the phone images" />
                             <Link to='/samsung'>
-                                <Button style={{"borderColor": 'grey', 
-                                                "color": 'grey'}} variant="outlined"> 
+                                <Button style={{"backgroundColor": '#f57c00', 
+                                                "color": 'white'}} variant="contained"> 
                                     Samsung 
                                 </Button>
                             </Link>
@@ -76,8 +76,8 @@ export default function Home() {
                         <div>
                             <img className="devicesStyle" src={pixel} alt="all of the phone images" />
                             <Link to='/pixel'>
-                                <Button style={{"borderColor": 'grey', 
-                                                "color": 'grey'}} variant="outlined"> 
+                                <Button style={{"backgroundColor": '#f57c00', 
+                                                "color": 'white'}} variant="contained"> 
                                     Pixel 
                                 </Button> 
                             </Link>
@@ -85,8 +85,8 @@ export default function Home() {
                         <div>
                             <img className="devicesStyle" src={ipad} alt="all of the phone images" />
                             <Link to='/ipad'>
-                                <Button style={{"borderColor": 'grey', 
-                                                "color": 'grey'}} variant="outlined">
+                                <Button style={{"backgroundColor": '#f57c00', 
+                                                "color": 'white'}} variant="contained">
                                     iPad
                                 </Button>
                             </Link>

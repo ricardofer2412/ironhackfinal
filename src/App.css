@@ -6,7 +6,7 @@
 /* ****************************************************************NAVBAR STYLING ****************************************************************/
 .navBar {
   display: flex;
-  background-color:  rgb(29, 29, 29);
+  background-color: #f57c00  ;
   height: 12vh;
 }
 
@@ -19,7 +19,7 @@
 .navItems {
   display: flex;
   justify-content: space-evenly;
-  background-color:  rgb(29, 29, 29);
+  background-color: #f57c00  ;
   height: 12vh;
   width: 45%;
   margin-right: 2vw;
@@ -33,7 +33,7 @@
   padding-top: 2vh;
   height: 3vh;
   width: 3vw;
-  color:rgb(146, 134, 134);
+  color:white ;
   text-decoration: none;
   font-size: 2vh;
   border-radius:5px;
@@ -89,44 +89,8 @@
   justify-content: space-between;
 }
 
-.final-offer{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 10vh;
-}
 
-.offer-div{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 50vh;
-  width: 40vh;
-  background-color: #EEE4DC;
-  padding: 5vh;
-}
-.offer-div > *{
-  margin: 0;
-}
-.amount{
-  margin: 0;
-  font-size: 5vw;
-}
-
-.product-info{
-  display: flex;
-  align-items: space-around;
-  align-items: center;
-}
-.product-info img{
-  height: 60vh;
-  margin-right: 4vw;
-}
-
-.get-paid-btn{
-  width: 50%;
-}
+/****************************** Final Offer Styles *******************************/
 
 .user-form{
   display: flex;
