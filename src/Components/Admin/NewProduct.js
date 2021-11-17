@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import MenuItem from "@mui/material/MenuItem";
 
 const carriers = [
   {
@@ -133,7 +134,7 @@ class NewProduct extends Component {
                   select
                   label="Carrier"
                   InputProps={{ name: "carrier" }}
-                  value={carrier}
+                  value={this.state.category}
                   onChange={(e) => this.handleChange(e)}
                   // style={{ width: 250 }}
                   SelectProps={{
@@ -143,9 +144,9 @@ class NewProduct extends Component {
                   variant="outlined"
                 >
                   {carriers.map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <MenuItem key={option.value} value={option.value}>
                       {option.label}
-                    </option>
+                    </MenuItem>
                   ))}
                 </TextField>
                 <TextField
@@ -161,28 +162,26 @@ class NewProduct extends Component {
                   variant="outlined"
                 >
                   {memoryList.map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <MenuItem key={option.value} value={option.value}>
                       {option.label}
-                    </option>
+                    </MenuItem>
                   ))}
                 </TextField>
 
                 <TextField
+                  id="outlined-select-currency"
                   select
                   label="Category"
                   InputProps={{ name: "category" }}
-                  value={category}
+                  value={this.state.category}
                   onChange={(e) => this.handleChange(e)}
-                  SelectProps={{
-                    MenuProps: {},
-                  }}
                   margin="normal"
                   variant="outlined"
                 >
                   {categoryList.map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <MenuItem key={option.value} value={option.value}>
                       {option.label}
-                    </option>
+                    </MenuItem>
                   ))}
                 </TextField>
 

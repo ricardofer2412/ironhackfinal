@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import MenuItem from "@mui/material/MenuItem";
 
 const orderStatusArr = [
   {
@@ -45,6 +46,25 @@ export default class EditOrder extends Component {
   componentDidMount() {
     this.getOrderInfo();
   }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+
+    const { params } = this.props.match;
+    const { status } = this.state;
+    console.log(status);
+
+    axios
+      .put(`http://localhost:5000/api/orders/${params.id}`, {
+        status,
+      })
+      .then(() => {
+        console.log("Updated");
+        const { history } = this.props;
+        history.push("/admin/orders");
+      });
+  };
+
   render() {
     return (
       <div className="admin-main">
@@ -58,22 +78,19 @@ export default class EditOrder extends Component {
             <form onSubmit={this.onSubmit}>
               <div className="new_product_div">
                 <TextField
+                  id="outlined-select-currency"
                   select
                   label="Status"
                   InputProps={{ name: "status" }}
                   value={this.state.status}
                   onChange={(e) => this.handleChange(e)}
-                  // style={{ width: 250 }}
-                  SelectProps={{
-                    MenuProps: {},
-                  }}
                   margin="normal"
                   variant="outlined"
                 >
                   {orderStatusArr.map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <MenuItem key={option.value} value={option.value}>
                       {option.label}
-                    </option>
+                    </MenuItem>
                   ))}
                 </TextField>
 
@@ -94,7 +111,7 @@ export default class EditOrder extends Component {
                     id="cancelButton"
                     fullWidth
                     viant="contained"
-                    to="/admin/products"
+                    to="/admin/orders"
                     component={Link}
                   >
                     Cancel

@@ -106,26 +106,30 @@ export default function UserForm() {
                             "paymentMethod": formObj.payment,
                             "orderStatus": "Submitted",
                         }
-
-
-                        
                         console.log({newOrder, formObj})
 
+
+
+
                         const {name, payment, email} = formObj
-                        console.log(email)
+                    
+
+                        console.log(phone)
 
                         axios({
                             method: "POST", 
                             url:"http://localhost:5000/api/sendConfirmation", 
                             data: {
                                 name: name,   
-                                email: email,  
+                                email: email,
+                                model:phone
+
                             
                             }
                         }).then((response)=>{
                             if (response.data.msg === 'success'){
                                 alert("Message Sent."); 
-                                this.resetForm()
+                                
                             }else if(response.data.msg === 'fail'){
                                 alert("Message failed to send.")
                             }
