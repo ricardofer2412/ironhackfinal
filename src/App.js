@@ -11,7 +11,7 @@ import Storage from "./Components/Carrier";
 import Offers from "./Components/Offers";
 import UserForm from "./Components/UserForm";
 import Confirm from "./Components/Confirmation";
-import ScrollToTop from "./Components/ScrollToTop"
+import ScrollToTop from "./Components/ScrollToTop";
 import Products from "./Components/Admin/Products";
 import SideBar from "./Components/Admin/SideBar";
 import NewProduct from "./Components/Admin/NewProduct";
@@ -68,7 +68,7 @@ class App extends React.Component {
           {/* <Route path="/admin" exact>
             <Admin />
           </Route> */}
-          <ScrollToTop/>
+          <ScrollToTop />
           <Switch>
             <Route
               exact
@@ -100,6 +100,12 @@ class App extends React.Component {
               exact
               path="/admin/products"
               component={Products}
+            />
+            <ProtectedRoute
+              user={this.state.user}
+              exact
+              path="/admin/users"
+              component={Users}
             />
             <ProtectedRoute
               user={this.state.user}
