@@ -24,6 +24,7 @@ import Users from "./Components/Admin/Users/Users";
 import CreateUser from "./Components/Admin/Users/CreateUser";
 import Order from "./Components/Admin/Order";
 import EditOrder from "./Components/Admin/EditOrder";
+import EditUser from "./Components/Admin/Users/EditUser";
 
 class App extends React.Component {
   state = {
@@ -106,6 +107,12 @@ class App extends React.Component {
               exact
               path="/admin/users"
               component={Users}
+            />
+            <ProtectedRoute
+              user={this.state.user}
+              exact
+              path="/admin/users/:id"
+              component={EditUser}
             />
             <ProtectedRoute
               user={this.state.user}
