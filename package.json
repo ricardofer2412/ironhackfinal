@@ -6,16 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "echo --- preinstall --- && cd backend && npm install && cd ..",
-    "start": "echo --- start --- cd backend && npm start"
+    "start": "echo --- start --- cd backend && npm start",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "#"
   },
-  "author": "",
+  "author": "", 
   "license": "ISC",
   "bugs": {
-    "url": "#"
+    "url": "https://buybackapp.herokuapp.com/"
   },
   "homepage": "#"
 }
