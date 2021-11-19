@@ -50,7 +50,7 @@ class Products extends Component {
         <div className="main-content">
           <Navbar />
           <div>
-            <h3>Product List</h3>
+            <h3>Products</h3>
           </div>
           <div className="add-div">
             <Button
