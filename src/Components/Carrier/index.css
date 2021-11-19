@@ -46,6 +46,7 @@
 
 .details-styling{
     display: flex;
+    font-weight: 200;
 }
 
 .btn-style{

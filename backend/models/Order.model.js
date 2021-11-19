@@ -4,6 +4,7 @@ const { Schema, model } = mongoose;
 
 const orderSchema = new Schema({
     product: Object,
+    price: Number,
     vendor: Object,
     orderNumber: Number,
     orderDate: Date,

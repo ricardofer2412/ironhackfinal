@@ -69,8 +69,14 @@ export default function UserForm() {
         {carrier: phoneCarrier, memory: phoneStorage, model: deviceDetails.name, category: path.phone }).then((response) => {
           
             const phoneData = response.data
-            setPrice(phoneData[0].price)     
-           
+            if(phoneData.length === 0) {
+                //  setPrice(0)  
+                console.log('executed')
+                console.log('price null')
+            } 
+            else {
+                setPrice(phoneData[0].price)
+            }
         })
     }
     )
@@ -80,7 +86,7 @@ export default function UserForm() {
             <Button style={btnStyle} onClick={() => history.goBack()}><ArrowBackIcon/></Button>
             <div className="top-container">
                 <div className="order-container">
-                    <h2>This is your order:</h2>
+                    <h4>This is Your Order</h4>
                     <div className="order-details">
                         <img src={deviceDetails.image} alt={deviceDetails.name}/>
                         <div>
@@ -98,6 +104,7 @@ export default function UserForm() {
                         formObj.state = selectedState;
                         const newOrder = {
                             "product": phone,
+                            'productPrice': price,
                             "vendor": formObj,
                             "orderNumber": '',
                             "orderDate": date,
@@ -105,7 +112,18 @@ export default function UserForm() {
                             "paymentMethod": formObj.payment,
                             "orderStatus": "Submitted",
                         }
-                        const {name, payment, email} = formObj
+                        const {name, email} = formObj
+                    
+
+                        console.log(phone)
+
+                        axios
+                            .post('http://localhost:5000/api//newOrder', newOrder)
+                            .then(response =>{
+                                console.log(response);
+                            })
+                            .catch(err => console.log(err))
+
                 
                         axios({
                             method: "POST", 
@@ -120,6 +138,7 @@ export default function UserForm() {
                         }).then((response)=>{
                             if (response.data.msg === 'success'){
                                 alert("Message Sent."); 
+                                // this.resetForm()
                                 
                             }else if(response.data.msg === 'fail'){
                                 alert("Message failed to send.")
@@ -130,7 +149,7 @@ export default function UserForm() {
                         }
                         }
                         
-                    >
+                >
                     {({handleSubmit})=>(
                     <form className="user-form" onSubmit={handleSubmit}>
                         <div className="form-div">
@@ -176,6 +195,19 @@ export default function UserForm() {
                                             </div>
                                             )}
                                     </Field>
+                                    <Field className="state-style" name="state">
+                                        {({input})=>(
+                                            <Autocomplete
+                                                disablePortal
+                                                id="combo-box-demo"
+                                                style={{marginTop:'3vh', marginLeft:'4.5vw'}}
+                                                options={states.map((state, key) => state.name)}
+                                                sx={{ width: '20vw' }}
+                                                renderInput={({...props})=><TextField label='State' {...props}/>}
+                                                onChange={onChangeHandler}
+                                            />
+                                        )}  
+                                    </Field>
                                 
                                     <Field name="address">
                                     {({input})=>(
@@ -207,19 +239,7 @@ export default function UserForm() {
                                                 </div>
                                             )}
                                     </Field>
-                                    <Field className="state-style" name="state">
-                                        {({input})=>(
-                                            <Autocomplete
-                                                disablePortal
-                                                id="combo-box-demo"
-                                                style={{marginTop:'3vh', marginLeft:'7vw'}}
-                                                options={states.map((state, key) => state.name)}
-                                                sx={{ width: '20vw' }}
-                                                renderInput={({...props})=><TextField label='State' {...props}/>}
-                                                onChange={onChangeHandler}
-                                            />
-                                        )}  
-                                    </Field>
+                                    
                                 
                                     <Field name="zipcode">
                                         {({input})=>(
@@ -234,25 +254,27 @@ export default function UserForm() {
                             </div>
                     
                         <div class="payment-div">
-                        <Field className="payment" name="payment">
-                            {({input})=>(
-                                    <div  className="box-sizing">
-                                        <ToggleButtonGroup
-                                            color="primary"
-                                            value={payment}
-                                            exclusive
-                                        onChange={handleChange}
-                                        {...input}
-                                        >
-                                            <ToggleButton value="Check">Check</ToggleButton>
-                                            <ToggleButton value="Paypal">Paypal</ToggleButton>
-                                            <ToggleButton value="Amazon">Amazon</ToggleButton>
-                                            <ToggleButton value="Debit">Debit</ToggleButton>
-                                        </ToggleButtonGroup>
-                                    </div>
-                                )}
-                        </Field>
-                        <Button style={{marginTop: '30px'}} variant='contained' type='POST' >Submit</Button>
+                            <div>
+                                <Field className="payment" name="payment">
+                                    {({input})=>(
+                                            <div  className="box-sizing">
+                                                <ToggleButtonGroup
+                                                    color="primary"
+                                                    value={payment}
+                                                    exclusive
+                                                onChange={handleChange}
+                                                {...input}
+                                                >
+                                                    <ToggleButton value="Check">Check</ToggleButton>
+                                                    <ToggleButton value="Paypal">Paypal</ToggleButton>
+                                                    <ToggleButton value="Amazon">Amazon</ToggleButton>
+                                                    <ToggleButton value="Debit">Debit</ToggleButton>
+                                                </ToggleButtonGroup>
+                                            </div>
+                                        )}
+                                </Field>
+                            </div>
+                            <Button style={{marginTop: '30px'}} variant='contained' type='POST' >Submit</Button>
                         </div>
                     </form>
                     )}

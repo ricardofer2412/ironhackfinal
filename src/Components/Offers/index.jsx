@@ -94,7 +94,7 @@ export default function Offers() {
                                 <Button style={{'backgroundColor': '#ff9800',
                                                 'width': '10vw',
                                                 'boxShadow' : '2px 2px 2px grey',
-                                                'color': 'black' 
+                                                'color': 'white' 
                                                 }}>
                                
                                     Get Paid
