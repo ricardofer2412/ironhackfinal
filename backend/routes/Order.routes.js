@@ -76,6 +76,16 @@ router.get("/orders", (req, res, next) => {
   Order.find().then((allOrders) => res.json(allOrders));
 });
 
+router.put("/orders/:orderId", (req, res, next) => {
+  const { orderId } = req.params;
+  console.log(orderId);
+  const { status } = req.body;
+  console.log(status);
+
+  Order.findByIdAndUpdate(orderId, { orderStatus: status }).then(
+    res.json({ message: `order has been updated` })
+  );
+});
 router.delete("/orders/:orderId", (req, res, next) => {
   const { orderId } = req.params;
   if (!mongoose.Types.ObjectId.isValid(orderId)) {

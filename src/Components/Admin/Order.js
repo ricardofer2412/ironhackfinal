@@ -80,7 +80,7 @@ class Orders extends Component {
                         {order.product.device} {order.product.carrier}
                         {order.product.storage}
                       </TableCell>
-                      <TableCell align="right">Pending</TableCell>
+                      <TableCell align="right">{order.orderStatus}</TableCell>
                       <TableCell align="right">
                         <DeleteIcon
                           style={{ color: "red" }}

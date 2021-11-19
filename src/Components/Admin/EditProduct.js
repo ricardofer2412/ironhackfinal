@@ -8,8 +8,9 @@ import Navbar from "./Navbar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
 
-const carriers = [
+const carrierList = [
   {
     value: "verizon",
     label: "Verizon",
@@ -72,12 +73,9 @@ class EditProduct extends Component {
   }
 
   componentDidMount() {
+    console.log("test");
     this.getSingleProduct();
   }
-  handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
 
   getSingleProduct = () => {
     const { params } = this.props.match;
@@ -97,6 +95,10 @@ class EditProduct extends Component {
       .catch((error) => {
         console.log(error);
       });
+  };
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   };
 
   onSubmit = (e) => {
@@ -131,7 +133,7 @@ class EditProduct extends Component {
           <Navbar />
           <div className="new_product_div">
             <Typography component="h1" variant="h5">
-              New Product
+              Edit Product
             </Typography>
             <form onSubmit={this.onSubmit}>
               <div className="new_product_div">
@@ -141,25 +143,23 @@ class EditProduct extends Component {
                   value={model}
                   onChange={(e) => this.handleChange(e)}
                 />
+
                 <TextField
                   select
                   label="Carrier"
                   InputProps={{ name: "carrier" }}
                   value={this.state.carrier}
                   onChange={(e) => this.handleChange(e)}
-                  // style={{ width: 250 }}
-                  SelectProps={{
-                    MenuProps: {},
-                  }}
                   margin="normal"
                   variant="outlined"
                 >
-                  {carriers.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
+                  {carrierList.map((comp) => (
+                    <MenuItem key={comp.value} value={comp.value}>
+                      {comp.label}
+                    </MenuItem>
                   ))}
                 </TextField>
+
                 <TextField
                   select
                   label="Memory"
@@ -173,9 +173,9 @@ class EditProduct extends Component {
                   variant="outlined"
                 >
                   {memoryList.map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <MenuItem key={option.value} value={option.value}>
                       {option.label}
-                    </option>
+                    </MenuItem>
                   ))}
                 </TextField>
 
@@ -192,9 +192,9 @@ class EditProduct extends Component {
                   variant="outlined"
                 >
                   {categoryList.map((option) => (
-                    <option key={option.value} value={option.value}>
+                    <MenuItem key={option.value} value={option.value}>
                       {option.label}
-                    </option>
+                    </MenuItem>
                   ))}
                 </TextField>
 

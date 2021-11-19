@@ -20,7 +20,7 @@ const userRole = [
   },
 ];
 
-class CreateUser extends Component {
+class EditUser extends Component {
   state = {
     username: "",
     password: "",
@@ -169,68 +169,8 @@ class CreateUser extends Component {
           </div>
         </div>
       </div>
-      // <div>
-      //   <form onSubmit={this.handleFormSubmit}>
-      //     CREATE NEW USER
-      //     <label>
-      //       First Name:
-      //       <input
-      //         type="text"
-      //         name="firstName"
-      //         value={this.state.firstName}
-      //         onChange={this.handleChange}
-      //       />
-      //     </label>
-      //     <label>
-      //       Last Name:
-      //       <input
-      //         type="text"
-      //         name="lastName"
-      //         value={this.state.lastName}
-      //         onChange={this.handleChange}
-      //       />
-      //     </label>
-      //     <label>
-      //       Role:
-      //       <input
-      //         type="text"
-      //         name="role"
-      //         value={this.state.role}
-      //         onChange={this.handleChange}
-      //       />
-      //     </label>
-      //     <label>
-      //       Username:
-      //       <input
-      //         type="text"
-      //         name="username"
-      //         value={this.state.username}
-      //         onChange={this.handleChange}
-      //       />
-      //     </label>
-      //     <label>
-      //       Password:
-      //       <input
-      //         type="password"
-      //         name="password"
-      //         value={this.state.password}
-      //         onChange={this.handleChange}
-      //       />
-      //     </label>
-      //     <label>
-      //       email:
-      //       <input
-      //         type="email"
-      //         name="userEmail"
-      //         value={this.state.userEmail}
-      //         onChange={this.handleChange}
-      //       />
-      //     </label>
-      //     <button type="submit"> Create User </button>
-      //   </form>
-      // </div>
     );
   }
 }
 
-export default CreateUser;
+export default EditUser;
