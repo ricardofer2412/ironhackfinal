@@ -33,7 +33,6 @@ export default class EditOrder extends Component {
       .get(`http://localhost:5000/api/orders/${params.id}`)
       .then((response) => {
         const order = response.data;
-        console.log(order);
         this.setState({
           status: order.orderStatus,
         });
@@ -52,14 +51,12 @@ export default class EditOrder extends Component {
 
     const { params } = this.props.match;
     const { status } = this.state;
-    console.log(status);
 
     axios
       .put(`http://localhost:5000/api/orders/${params.id}`, {
         status,
       })
       .then(() => {
-        console.log("Updated");
         const { history } = this.props;
         history.push("/admin/orders");
       });

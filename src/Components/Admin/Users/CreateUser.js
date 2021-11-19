@@ -55,7 +55,6 @@ class CreateUser extends Component {
         userEmail
       )
       .then((createdUser) => {
-        console.log(createdUser.userEmail);
         this.setState({
           username: "",
           password: "",
@@ -97,6 +96,7 @@ class CreateUser extends Component {
                 <TextField
                   label="Password"
                   variant="outlined"
+                  type="password"
                   name="password"
                   value={this.state.password}
                   onChange={(e) => this.handleChange(e)}
@@ -119,6 +119,7 @@ class CreateUser extends Component {
                   label="Email"
                   variant="outlined"
                   name="email"
+                  type="email"
                   value={this.state.email}
                   onChange={(e) => this.handleChange(e)}
                 />{" "}

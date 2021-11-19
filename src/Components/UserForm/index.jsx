@@ -67,8 +67,7 @@ export default function UserForm() {
 
         axios.post('http://localhost:5000/api/product/getprice' , 
         {carrier: phoneCarrier, memory: phoneStorage, model: deviceDetails.name, category: path.phone }).then((response) => {
-            console.log('executed')
-            console.log(response.data)
+          
             const phoneData = response.data
             setPrice(phoneData[0].price)     
            
@@ -106,16 +105,8 @@ export default function UserForm() {
                             "paymentMethod": formObj.payment,
                             "orderStatus": "Submitted",
                         }
-                        console.log({newOrder, formObj})
-
-
-
-
                         const {name, payment, email} = formObj
-                    
-
-                        console.log(phone)
-
+                
                         axios({
                             method: "POST", 
                             url:"http://localhost:5000/api/sendConfirmation", 

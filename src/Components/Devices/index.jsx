@@ -11,7 +11,6 @@ export default function Devices() {
 
     const history = useHistory()
     let phonePath = useParams().phone
-    console.log(phonePath)
     let phoneName;
     const btnStyle = {
         'display': 'block', 

@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import SideBar from "./SideBar";
 import TextField from "@mui/material/TextField";
 import Navbar from "./Navbar";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
@@ -73,7 +71,6 @@ class EditProduct extends Component {
   }
 
   componentDidMount() {
-    console.log("test");
     this.getSingleProduct();
   }
 
@@ -103,10 +100,8 @@ class EditProduct extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    console.log("text");
     const { params } = this.props.match;
     const { model, price, carrier, memory, category } = this.state;
-    console.log(params.id);
 
     axios
       .put(`http://localhost:5000/api/products/${params.id}`, {
@@ -117,7 +112,6 @@ class EditProduct extends Component {
         category,
       })
       .then(() => {
-        console.log("Updated");
         const { history } = this.props;
         history.push("/admin/products");
       })
@@ -125,7 +119,7 @@ class EditProduct extends Component {
   };
 
   render() {
-    const { model, carrier, memory, price, category } = this.state;
+    const { model, memory, price, category } = this.state;
     return (
       <div className="admin-main">
         <SideBar />

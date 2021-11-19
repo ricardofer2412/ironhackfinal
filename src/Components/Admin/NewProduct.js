@@ -4,7 +4,6 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Navbar from "./Navbar";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -111,7 +110,7 @@ class NewProduct extends Component {
   };
 
   render() {
-    const { model, carrier, memory, price, category } = this.state;
+    const { model, memory, price } = this.state;
     return (
       <div className="admin-main">
         <SideBar />

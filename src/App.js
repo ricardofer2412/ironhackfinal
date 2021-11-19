@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Devices from "./phones.json";
 import Home from "./Components/Home";
 import Admin from "./Components/Admin";
-import NavBar from "./Components/NavBar";
 import Device from "./Components/Devices";
 import CarrierLinks from "./Components/Carrier/Routes";
 import Storage from "./Components/Carrier";
@@ -13,7 +12,6 @@ import UserForm from "./Components/UserForm";
 import Confirm from "./Components/Confirmation";
 import ScrollToTop from "./Components/ScrollToTop";
 import Products from "./Components/Admin/Products";
-import SideBar from "./Components/Admin/SideBar";
 import NewProduct from "./Components/Admin/NewProduct";
 import EditProduct from "./Components/Admin/EditProduct";
 import Signup from "./Components/auth/Signup";
@@ -107,6 +105,7 @@ class App extends React.Component {
               exact
               path="/admin/users"
               component={Users}
+              getUser={this.getTheUser}
             />
             <ProtectedRoute
               user={this.state.user}

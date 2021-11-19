@@ -13,7 +13,6 @@ import Paper from "@mui/material/Paper";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CreateIcon from "@mui/icons-material/Create";
 import IconButton from "@material-ui/core/IconButton";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import "./index.css";
@@ -29,9 +28,7 @@ class Products extends Component {
 
   getAllProducts = () => {
     axios.get("http://localhost:5000/api/products").then((response) => {
-      console.log("this is products", response);
       const list = response.data;
-      console.log(list);
       this.setState({
         productList: list,
       });
@@ -42,10 +39,6 @@ class Products extends Component {
     const { _id } = product;
     axios.delete(`http://localhost:5000/api/products/${_id}`).then(() => {
       alert("Product Deleted");
-
-      // const { history } = this.props;
-      // history.push("/admin/products");
-
       this.getAllProducts();
     });
   };

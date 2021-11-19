@@ -11,8 +11,6 @@ export default class Home extends Component {
   };
   getOrdersCount = () => {
     axios.get("http://localhost:5000/api/orders").then((response) => {
-      console.log("order count", response.data.length);
-
       const orderCount = response.data.length;
       this.setState({
         orderCount: orderCount,
@@ -21,8 +19,6 @@ export default class Home extends Component {
   };
   getUsersCount = () => {
     axios.get("http://localhost:5000/api/users").then((response) => {
-      console.log("order count", response.data.length);
-
       const usersCount = response.data.length;
       this.setState({
         usersCount: usersCount,
