@@ -23,7 +23,7 @@ router.post("/signup", (req, res, next) => {
     userEmail,
   } = req.body;
 
-  console.log("User", req.body);
+  console.log("User", userEmail);
 
   if (!username || !password) {
     res.status(400).json({ message: "Provide username and password" });

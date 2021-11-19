@@ -120,7 +120,8 @@ class CreateUser extends Component {
                   variant="outlined"
                   name="email"
                   type="email"
-                  value={this.state.email}
+                  InputProps={{ name: "userEmail" }}
+                  value={this.state.userEmail}
                   onChange={(e) => this.handleChange(e)}
                 />{" "}
                 <TextField
