@@ -15,6 +15,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CreateIcon from "@mui/icons-material/Create";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@mui/material/Tooltip";
+import Button from "@mui/material/Button";
+import AddIcon from "@mui/icons-material/Add";
 
 export default class Users extends Component {
   state = {
@@ -58,7 +60,24 @@ export default class Users extends Component {
         <SideBar />
         <div className="widget-container-div">
           <Navbar />
-          <Link to="/admin/createuser">Create Users</Link>
+          <div>
+            <h3>Users</h3>
+          </div>
+          {this.state.loggedInUserRole === "admin" ? (
+            <div className="add-div">
+              <Button
+                id="addProduct"
+                viant="contained"
+                to="/admin/createuser"
+                startIcon={<AddIcon />}
+                component={Link}
+              >
+                New User
+              </Button>
+            </div>
+          ) : (
+            <div></div>
+          )}
           <div className="table">
             <TableContainer component={Paper}>
               <Table sx={{ minWidth: 650 }} aria-label="simple table">

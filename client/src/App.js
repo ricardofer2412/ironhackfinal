@@ -24,6 +24,7 @@ import Order from "./Components/Admin/Order";
 import EditOrder from "./Components/Admin/EditOrder";
 import TrackOrder from "./Components/Track Order";
 import EditUser from "./Components/Admin/Users/EditUser";
+import LandingPage from "./Components/Admin/LandingPage";
 
 class App extends React.Component {
   state = {
@@ -77,6 +78,8 @@ class App extends React.Component {
                 <Signup {...props} getUser={this.getTheUser} />
               )}
             />
+
+            <Route exact path="/landingpage" component={LandingPage} />
             <Route
               exact
               path="/login"
@@ -87,7 +90,7 @@ class App extends React.Component {
               <Home />
             </Route>
             <Route exact path="/faq" />
-            <Route exact path="/track-order" render={() => <TrackOrder/>} />
+            <Route exact path="/track-order" render={() => <TrackOrder />} />
             <Route exact path="/contact-us" />
             <ProtectedRoute
               user={this.state.user}

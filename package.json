@@ -1,59 +1,21 @@
 {
-  "name": "ironhackfinal",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/icons": "^4.11.2",
-    "@mui/icons-material": "^5.1.0",
-    "@mui/material": "^5.0.6",
-    "@react-navigation/native": "^6.0.6",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.24.0",
-    "bcryptjs": "^2.4.3",
-    "bootstrap": "^5.1.3",
-    "express-session": "^1.17.2",
-    "final-form": "^4.20.4",
-    "passport": "^0.5.0",
-    "passport-local": "^1.0.0",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.0.2",
-    "react-dom": "^17.0.2",
-    "react-final-form": "^6.5.7",
-    "react-hook-form": "^7.19.5",
-    "react-native-navigation-hooks": "^6.3.0",
-    "react-phone-input-2": "^2.14.0",
-    "react-phone-number-input": "^3.1.38",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
-  },
+  "name": "ih-project-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "echo --- preinstall --- && cd backend && npm install && cd ..",
+    "start": "echo --- start --- cd backend && npm start"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "#"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "#"
+  },
+  "homepage": "#"
 }
