@@ -1,3 +1,18 @@
 .track-orderDiv{
     margin: 10%;
+    margin-top: 5%;
+}
+
+.update-message{
+    padding-top: 5%;
+}
+
+.update-message > *{
+    font-weight: 300;
+    text-align: center;
+}
+
+.mainContainer > Footer{
+    position: absolute;
+    bottom: 0;
 }

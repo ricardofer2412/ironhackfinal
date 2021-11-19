@@ -45,20 +45,20 @@ export default function Storage  () {
                         {
                             deviceDetails.storage.map(storage => {
                                 return (
-                                    <div className="device-div">
+                                    <div className="device-div" key={deviceDetails.name}>
                                         <img className="storage-img" src={deviceDetails.image} alt={deviceDetails.name}/>
                                         <h2> {deviceDetails.name}</h2>
                                         <h4>{storage}</h4>
-                                        <Button className='btn-style' 
-                                                style={{'backgroundColor':'#ff9800'}} 
-                                                variant='contained'>
                                             <Link style={{'textDecoration':'none', 
                                                         'backgroundColor': '#ff9800',
                                                         'color': 'white'}} 
                                                 to={`${carrier}/${storage}`}>
+                                        <Button className='btn-style' 
+                                                style={{'backgroundColor':'#ff9800'}} 
+                                                variant='contained'>
                                                 Get an Offer
-                                            </Link>
                                         </Button>
+                                            </Link>
                                     </div>
                                 )
                             })
