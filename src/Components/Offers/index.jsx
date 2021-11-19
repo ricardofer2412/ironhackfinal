@@ -51,9 +51,9 @@ export default function Offers() {
         {carrier: phoneCarrier, memory: phoneStorage, model: deviceDetails.name, category: path.phone })
         .then((response) => {
 
-            console.log('response data', response.data)
+            // console.log('response data', response.data)
             const phoneData = response.data
-            setPrice(phoneData[0].price)     
+            // setPrice(phoneData[0].price)     
            
       
             if(phoneData.length === 0) {

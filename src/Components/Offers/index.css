@@ -41,14 +41,17 @@
     align-items: center;
     height: 75vh;
     margin-bottom: 5vh;
+    font-weight: lighter;
   }
   
   .offer-div > h1{
     font-size: 2.5vw;
+    font-weight: lighter;
   }
   
   .offer-div > *{
     margin: 0;
+    font-weight: lighter;
   }
   .amount{
     margin: 0;
@@ -59,10 +62,20 @@
     display: flex;
     align-items: space-around;
     align-items: center;
+    
+
   }
   .product-info img{
     height: 60vh;
     margin-right: 4vw;
+  }
+
+  .device-details{
+    font-weight: lighter;
+  }
+
+  .device-details > h2{
+    font-weight: lighter;
   }
   
   .get-paid-btn{

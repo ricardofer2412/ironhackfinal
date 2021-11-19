@@ -24,7 +24,7 @@ import Users from "./Components/Admin/Users/Users";
 import CreateUser from "./Components/Admin/Users/CreateUser";
 import Order from "./Components/Admin/Order";
 import EditOrder from "./Components/Admin/EditOrder";
-
+import TrackOrder from "./Components/Track Order";
 class App extends React.Component {
   state = {
     isLoggedIn: false,
@@ -87,7 +87,7 @@ class App extends React.Component {
               <Home />
             </Route>
             <Route exact path="/faq" />
-            <Route exact path="/track-order" />
+            <Route exact path="/track-order" render={() => <TrackOrder/>} />
             <Route exact path="/contact-us" />
             <ProtectedRoute
               user={this.state.user}

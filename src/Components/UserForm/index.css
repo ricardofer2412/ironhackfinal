@@ -1,44 +1,91 @@
 .top-container{
     display: flex;
     flex-direction: row;
-    margin: 5%;
-    margin-top:0;
+    margin-left: 3%;
+    margin-bottom: 5%;
+    width: 80vw;
+
 }
+
 
 .order-container{
     display: flex;
     flex-direction: column;
-   justify-content: center;
-   align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+}
+.order-container > h4{
+    font-weight: normal;
 }
 
 .order-details{
  display: flex;
  align-items: center;
- flex-direction: column;
- border: 1px  solid #ffa726 ;
+ flex-direction: row;
+ justify-content: space-between;
+ align-content: center;
+ border: 3px solid #ff9800;
  width: 30vw;
- height: 66vh;
+ height: 67vh;
  padding: 5vh;
+ position: relative;
+}
+
+.order-details:after{
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 25vw;
+    top: -3px;
+    right: 5vw;
+    border-top: 3px solid #F1F1F1;
+}
+.order-details:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 22vw;
+    bottom: -3px;
+    right: 3.5vw;
+    border-bottom: 3px solid #F1F1F1;
 }
 
 .order-details >  img{
-    height: 30vh;
+    height: 38vh;
+}
+
+.order-details > div{
+    height: 38vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.order-details > div > *{
+    font-weight: lighter;
+
 }
 
 
 
 .form-div{
+    margin-top: 10%;
     height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
+    /* margin: 5%; */
 }
-
+.form-div > *{
+    width: 30vw;
+}
 .payment-div{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    width: 100%;
+    margin-top: 5%;
+    margin-left:75%;
 }
