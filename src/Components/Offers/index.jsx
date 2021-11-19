@@ -81,7 +81,7 @@ export default function Offers() {
                             <p>Storage: {phoneStorage}</p> 
                         </div> 
                     </div>
-                    <divs className='offer-div'>
+                    <div className='offer-div'>
                         <h1>Your BuyBack Offer</h1>
                         <h4 className='amount'>${price}</h4>
                         <h4>Perfect Condition</h4>
@@ -100,7 +100,7 @@ export default function Offers() {
                                     Get Paid
                                 </Button>
                             </Link>
-                    </divs>
+                    </div>
                </div>
             }
             <Footer/>

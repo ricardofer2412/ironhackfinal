@@ -112,39 +112,15 @@ export default function UserForm() {
                             "paymentMethod": formObj.payment,
                             "orderStatus": "Submitted",
                         }
-                        const {name, email} = formObj
-                    
-
-                        console.log(phone)
 
                         axios
-                            .post('http://localhost:5000/api//newOrder', newOrder)
+                            .post('http://localhost:5000/api/newOrder', newOrder)
                             .then(response =>{
                                 console.log(response);
                             })
                             .catch(err => console.log(err))
 
                 
-                        axios({
-                            method: "POST", 
-                            url:"http://localhost:5000/api/sendConfirmation", 
-                            data: {
-                                name: name,   
-                                email: email,
-                                model:phone
-
-                            
-                            }
-                        }).then((response)=>{
-                            if (response.data.msg === 'success'){
-                                alert("Message Sent."); 
-                                // this.resetForm()
-                                
-                            }else if(response.data.msg === 'fail'){
-                                alert("Message failed to send.")
-                            }
-                        })
-                        
                         history.push('/thankyou')
                         }
                         }
@@ -253,7 +229,7 @@ export default function UserForm() {
                                     </Field>
                             </div>
                     
-                        <div class="payment-div">
+                        <div className="payment-div">
                             <div>
                                 <Field className="payment" name="payment">
                                     {({input})=>(

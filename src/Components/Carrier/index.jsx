@@ -12,9 +12,7 @@ export default function Storage  () {
         const history = useHistory()
         let params = useParams() //GET THE PHONE NAME FROM SEARCHBAR
         let carrier = useParams().carrier
-
-
-     
+             
         const btnStyle = {
             'display': 'block', 
             'color': '#ef6c00', 
@@ -45,7 +43,7 @@ export default function Storage  () {
                         {
                             deviceDetails.storage.map(storage => {
                                 return (
-                                    <div className="device-div" key={deviceDetails.name}>
+                                    <div className="device-div" key={`${deviceDetails.name}${storage}`}>
                                         <img className="storage-img" src={deviceDetails.image} alt={deviceDetails.name}/>
                                         <h2> {deviceDetails.name}</h2>
                                         <h4>{storage}</h4>

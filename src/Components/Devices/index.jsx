@@ -36,7 +36,7 @@ export default function Devices() {
                     
                         phone.phone[0][phoneName].models.map(model => {
                             return (
-                                <Link className="link-style" to={`/${phonePath}/${model.path}`}>
+                                <Link className="link-style" to={`/${phonePath}/${model.path}`} key={model.name}>
                                     <section className="device-box">
                                         <img className="iphone-images" src={model.image} alt={model.path}/>
                                         <p className="model-name">{model.name}</p>
