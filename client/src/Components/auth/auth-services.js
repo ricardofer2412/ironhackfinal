@@ -3,7 +3,7 @@ import axios from "axios";
 class AuthService {
   constructor() {
     this.service = axios.create({
-      baseURL: "http://localhost:5000/api",
+      baseURL: `${process.env.REACT_APP_API_URL}`,
       withCredentials: true,
     });
   }
@@ -54,18 +54,3 @@ class AuthService {
 const authService = new AuthService();
 
 export default authService;
-
-// import axios from "axios";
-
-// const instance = axios.create({
-//   baseURL: "http://localhost:5000/auth",
-//   withCredentials: true,
-// });
-
-// const authService = {
-//   signup: (body) =>
-//     instance.post("/signup", body).then((response) => response.data),
-//   // getSession: () => instance.get("/session").then((response) => response.data),
-// };
-
-// export default authService;

@@ -65,7 +65,7 @@ export default function UserForm() {
 
     useEffect(() => {
 
-        axios.post('http://localhost:5000/api/product/getprice' , 
+        axios.post(`${process.env.REACT_APP_API_URL}/product/getprice`, 
         {carrier: phoneCarrier, memory: phoneStorage, model: deviceDetails.name, category: path.phone }).then((response) => {
           
             const phoneData = response.data

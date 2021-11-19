@@ -24,7 +24,7 @@ class Orders extends Component {
   }
 
   getAllOrders = () => {
-    axios.get("http://localhost:5000/api/orders").then((response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/orders`).then((response) => {
       const list = response.data;
       this.setState({
         orderList: list,
@@ -34,7 +34,7 @@ class Orders extends Component {
 
   deleteOrder = (order, e) => {
     const { _id } = order;
-    axios.delete(`http://localhost:5000/api/orders/${_id}`).then(() => {
+    axios.delete(`${process.env.REACT_APP_API_URL}/orders/${_id}`).then(() => {
       alert("Order has been Deleted");
 
       this.getAllOrders();

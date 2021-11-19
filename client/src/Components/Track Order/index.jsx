@@ -39,7 +39,7 @@ export default function TrackOrder() {
                     let orderNumber = formObj.trackingNumber;  
                     
                     axios
-                        .get(`http://localhost:5000/api/track-order/${orderNumber}` )
+                        .get(`${process.env.REACT_APP_API_URL}/track-order/${orderNumber}` )
                         .then((order) =>{
                             const orderStatus = order.data[0].orderStatus;
                             const orderPhone = order.data[0].product;

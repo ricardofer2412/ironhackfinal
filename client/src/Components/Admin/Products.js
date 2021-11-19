@@ -27,7 +27,7 @@ class Products extends Component {
   }
 
   getAllProducts = () => {
-    axios.get("http://localhost:5000/api/products").then((response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/products`).then((response) => {
       const list = response.data;
       this.setState({
         productList: list,
@@ -37,10 +37,12 @@ class Products extends Component {
 
   deleteProduct = (product, e) => {
     const { _id } = product;
-    axios.delete(`http://localhost:5000/api/products/${_id}`).then(() => {
-      alert("Product Deleted");
-      this.getAllProducts();
-    });
+    axios
+      .delete(`${process.env.REACT_APP_API_URL}/products/${_id}`)
+      .then(() => {
+        alert("Product Deleted");
+        this.getAllProducts();
+      });
   };
 
   render() {

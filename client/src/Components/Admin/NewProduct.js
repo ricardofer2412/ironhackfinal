@@ -82,7 +82,7 @@ class NewProduct extends Component {
     e.preventDefault();
     const { model, carrier, memory, price, category } = this.state;
     axios
-      .post("http://localhost:5000/api/products", {
+      .post(`${process.env.REACT_APP_API_URL}/products`, {
         model,
         carrier,
         memory,

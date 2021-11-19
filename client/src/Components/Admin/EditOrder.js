@@ -30,7 +30,7 @@ export default class EditOrder extends Component {
   getOrderInfo = () => {
     const { params } = this.props.match;
     axios
-      .get(`http://localhost:5000/api/orders/${params.id}`)
+      .get(`${process.env.REACT_APP_API_URL}/orders/${params.id}`)
       .then((response) => {
         const order = response.data;
         this.setState({
@@ -53,7 +53,7 @@ export default class EditOrder extends Component {
     const { status } = this.state;
 
     axios
-      .put(`http://localhost:5000/api/orders/${params.id}`, {
+      .put(`${process.env.REACT_APP_API_URL}/orders/${params.id}`, {
         status,
       })
       .then(() => {

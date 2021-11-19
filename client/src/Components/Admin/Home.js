@@ -10,7 +10,7 @@ export default class Home extends Component {
     productsCount: "",
   };
   getOrdersCount = () => {
-    axios.get("http://localhost:5000/api/orders").then((response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/orders`).then((response) => {
       const orderCount = response.data.length;
       this.setState({
         orderCount: orderCount,
@@ -18,7 +18,7 @@ export default class Home extends Component {
     });
   };
   getUsersCount = () => {
-    axios.get("http://localhost:5000/api/users").then((response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/users`).then((response) => {
       const usersCount = response.data.length;
       this.setState({
         usersCount: usersCount,
@@ -26,7 +26,7 @@ export default class Home extends Component {
     });
   };
   getProductCount = () => {
-    axios.get("http://localhost:5000/api/products").then((response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/products`).then((response) => {
       console.log("order count", response.data.length);
 
       const productsCount = response.data.length;

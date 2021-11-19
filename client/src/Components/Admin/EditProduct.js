@@ -78,7 +78,7 @@ class EditProduct extends Component {
     const { params } = this.props.match;
 
     axios
-      .get(`http://localhost:5000/api/products/${params.id}`)
+      .get(`${process.env.REACT_APP_API_URL}/products/${params.id}`)
       .then((response) => {
         const product = response.data;
         this.setState({
@@ -104,7 +104,7 @@ class EditProduct extends Component {
     const { model, price, carrier, memory, category } = this.state;
 
     axios
-      .put(`http://localhost:5000/api/products/${params.id}`, {
+      .put(`${process.env.REACT_APP_API_URL}/products/${params.id}`, {
         model,
         price,
         carrier,
