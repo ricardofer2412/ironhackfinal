@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -15,28 +14,44 @@ import "./users.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CreateIcon from "@mui/icons-material/Create";
 import IconButton from "@material-ui/core/IconButton";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
-import Button from "@mui/material/Button";
-import AddIcon from "@mui/icons-material/Add";
+import Tooltip from "@mui/material/Tooltip";
 
 export default class Users extends Component {
   state = {
     usersList: [],
+    loggedInUserId: "",
+    loggedInUserRole: "",
   };
   componentDidMount() {
-    console.log("render all users");
+    const user = this.props.userData;
+    this.setState({
+      loggedInUserId: user._id,
+      loggedInUserRole: user.role,
+    });
     this.getAllUsers();
   }
+
   getAllUsers = () => {
     axios.get("http://localhost:5000/api/users").then((response) => {
-      console.log("All Users", response);
       const list = response.data;
-      console.log(list);
       this.setState({
         usersList: list,
       });
     });
   };
+
+  deleteUser = (user, e) => {
+    const { _id } = user;
+
+    if (this.state.loggedInUserRole === "admin") {
+      axios.delete(`http://localhost:5000/api/users/${_id}`).then(() => {
+        this.getAllUsers();
+      });
+    } else {
+      alert("Sorry, you are not ADMIN");
+    }
+  };
+
   render() {
     return (
       <div className="users-main">
@@ -75,16 +90,42 @@ export default class Users extends Component {
                         </div>
                       )}
                       <TableCell align="right">
-                        <IconButton
-                          component={Link}
-                          to={`/admin/users/${user._id}`}
-                          style={{ backgroundColor: "white" }}
-                        >
-                          <CreateIcon />
-                        </IconButton>
-                        {/* // <Link to={`/admin/products/${product._id}`}>
-                        //   <p>Edit</p>
-                        // </Link> */}
+                        {this.state.loggedInUserRole === "admin" ? (
+                          <IconButton
+                            component={Link}
+                            to={`/admin/users/${user._id}`}
+                            style={{ backgroundColor: "white" }}
+                          >
+                            <CreateIcon />
+                          </IconButton>
+                        ) : (
+                          <Tooltip title="Disable">
+                            <IconButton>
+                              <CreateIcon />
+                            </IconButton>
+                          </Tooltip>
+                        )}
+
+                        {this.state.loggedInUserRole === "admin" ? (
+                          <DeleteIcon
+                            style={{ color: "red" }}
+                            onClick={() => {
+                              if (
+                                window.confirm(
+                                  "Are you sure you want to delete this User"
+                                )
+                              ) {
+                                this.deleteUser(user);
+                              }
+                            }}
+                          />
+                        ) : (
+                          <Tooltip title="Disable">
+                            <IconButton>
+                              <DeleteIcon />
+                            </IconButton>
+                          </Tooltip>
+                        )}
                       </TableCell>
                     </TableRow>
                   ))}

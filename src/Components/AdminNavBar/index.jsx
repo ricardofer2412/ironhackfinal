@@ -13,9 +13,6 @@ class AdminNavBar extends React.Component {
  };
 render() {
    const { userData, userIsLoggedIn } = this.props;
-   console.log(userData)
-
-   console.log(userIsLoggedIn)
    if (userIsLoggedIn) {
      return (
        <nav className="nav-style">

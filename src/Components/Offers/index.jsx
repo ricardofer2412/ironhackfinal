@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useContext} from 'react';
+import React, { useState, useEffect} from 'react';
 import Devices from '../../phones.json'
 import {useParams, Link, useHistory, } from 'react-router-dom'
 import axios from "axios";
@@ -27,7 +27,6 @@ export default function Offers() {
         'marginTop': '15px'
     }
 
-    console.log(path.phone)
     if(useParams().carrier.charAt(0) === 't'){
         carrier = phoneCarrier.split("-")[0].toUpperCase() + '-' + phoneCarrier.split("-")[1].charAt(0).toUpperCase() + phoneCarrier.slice(3)
     }else if(phoneCarrier.charAt(0) === 'a'){
@@ -51,15 +50,13 @@ export default function Offers() {
         {carrier: phoneCarrier, memory: phoneStorage, model: deviceDetails.name, category: path.phone })
         .then((response) => {
 
-            // console.log('response data', response.data)
             const phoneData = response.data
             // setPrice(phoneData[0].price)     
            
       
             if(phoneData.length === 0) {
                 //  setPrice(0)  
-                console.log('executed')
-                console.log('price null')
+       
             } 
             else {
                 setPrice(phoneData[0].price)

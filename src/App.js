@@ -106,6 +106,7 @@ class App extends React.Component {
               exact
               path="/admin/users"
               component={Users}
+              getUser={this.getTheUser}
             />
             <ProtectedRoute
               user={this.state.user}

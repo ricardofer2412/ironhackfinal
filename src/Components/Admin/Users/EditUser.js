@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import authService from "../../auth/auth-services";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
-
+import axios from "axios";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
@@ -30,45 +29,43 @@ class EditUser extends Component {
     role: "",
   };
 
+  componentDidMount() {
+    this.getUser();
+  }
+
+  getUser = () => {
+    const { params } = this.props.match;
+
+    axios
+      .get(`http://localhost:5000/api/users/${params.id}`)
+      .then((response) => {
+        const user = response.data;
+
+        this.setState({
+          role: user.role,
+          userEmail: user.userEmail,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const {
-      username,
-      password,
-      role,
-      userImg,
-      firstName,
-      lastName,
-      active,
-      userEmail,
-    } = this.state;
+    const { role, userEmail } = this.state;
+    const { params } = this.props.match;
 
-    authService
-      .signup(
-        username,
-        password,
+    axios
+      .put(`http://localhost:5000/api/users/${params.id}`, {
         role,
-        userImg,
-        firstName,
-        lastName,
-        active,
-        userEmail
-      )
-      .then((createdUser) => {
-        console.log(createdUser.userEmail);
-        this.setState({
-          username: "",
-          password: "",
-          role: "",
-          firstName: "",
-          lastName: "",
-          userEmail: "",
-          active: true,
-        });
-        // this.props.getUser(response, true);
-        this.props.history.push("/admin/users");
+        userEmail,
       })
-      .catch((error) => console.log(error));
+      .then(() => {
+        console.log("Updated");
+        const { history } = this.props;
+        history.push("/admin/users");
+      });
   };
 
   handleChange = (event) => {
@@ -83,43 +80,16 @@ class EditUser extends Component {
           <Navbar />
           <div className="new_product_div">
             <Typography component="h1" variant="h5">
-              New User
+              Edit User
             </Typography>
             <form onSubmit={this.handleFormSubmit}>
               <div className="new_product_div">
                 <TextField
-                  label="Username"
-                  variant="outlined"
-                  name="username"
-                  value={this.state.username}
-                  onChange={(e) => this.handleChange(e)}
-                />
-                <TextField
-                  label="Password"
-                  variant="outlined"
-                  name="password"
-                  value={this.state.password}
-                  onChange={(e) => this.handleChange(e)}
-                />
-                <TextField
-                  label="First Name"
-                  variant="outlined"
-                  name="firstName"
-                  value={this.state.firstName}
-                  onChange={(e) => this.handleChange(e)}
-                />
-                <TextField
-                  label="Last Name"
-                  variant="outlined"
-                  name="lastName"
-                  value={this.state.lastName}
-                  onChange={(e) => this.handleChange(e)}
-                />
-                <TextField
                   label="Email"
                   variant="outlined"
-                  name="email"
-                  value={this.state.email}
+                  name="userEmail"
+                  InputProps={{ name: "userEmail" }}
+                  value={this.state.userEmail}
                   onChange={(e) => this.handleChange(e)}
                 />{" "}
                 <TextField
@@ -150,7 +120,7 @@ class EditUser extends Component {
                     className="submit-button"
                     a
                   >
-                    Create
+                    Save
                   </Button>
                 </div>
                 <div className="submit-div">

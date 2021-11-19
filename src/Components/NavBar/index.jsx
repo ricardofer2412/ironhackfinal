@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import '../../App.css'
-import authService from '../auth/auth-services';
 import logo from '../../images/WLnobackground.svg'
 
 export default function NavBar() {

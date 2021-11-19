@@ -147,17 +147,46 @@ router.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
+router.get("/getPrices", (req, res, next) => {
+  const { model, memory, carrier } = req.params;
 
-router.get('/getPrices', (req, res, next) => {
-    const {model, memory, carrier} = req.params;
-
-    Product.findOne({model: model, memory: memory, carrier: carrier})
-    .then((response)=> console.log(response))
-    .catch((err)=>console.log(err));
-})
+  Product.findOne({ model: model, memory: memory, carrier: carrier })
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err));
+});
 router.get("/users", (req, res, next) => {
-  console.log("get all users");
   User.find().then((allUsers) => res.json(allUsers));
+});
+
+router.get("/users/:userId", (req, res, next) => {
+  console.log("Test");
+  const { userId } = req.params;
+  console.log(userId);
+  User.findById(userId).then((user) => {
+    res.json(user);
+  });
+});
+
+router.put("/users/:userId", (req, res, next) => {
+  const { userId } = req.params;
+  const { userEmail, role } = req.body;
+
+  User.findByIdAndUpdate(userId, { userEmail: userEmail, role: role }).then(
+    res.json({ message: `user updated` })
+  );
+});
+
+router.delete("/users/:userId", (req, res, next) => {
+  const { userId } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(userId)) {
+    res.status(400).json({ message: "Invalid ID" });
+    return;
+  }
+  User.findByIdAndDelete(userId)
+    .then(() =>
+      res.json({ message: `Product with ${userId} has been deleted` })
+    )
+    .catch((error) => res.json(error));
 });
 
 module.exports = router;

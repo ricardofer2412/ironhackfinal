@@ -20,15 +20,12 @@ class Orders extends Component {
   };
 
   componentDidMount() {
-    console.log("Loding");
     this.getAllOrders();
   }
 
   getAllOrders = () => {
     axios.get("http://localhost:5000/api/orders").then((response) => {
-      console.log("this is products", response);
       const list = response.data;
-      console.log("list order", list);
       this.setState({
         orderList: list,
       });
