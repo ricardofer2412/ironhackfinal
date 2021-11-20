@@ -1,120 +1,185 @@
-body{
-    background-color: rgb(241, 241, 241);
+body {
+  background-color: rgb(241, 241, 241);
 }
 
-.mainDiv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.firstHeader > section > a{
-    text-decoration: none;
-}
-.firstHeader{
-    margin: 10%;
-    display: flex;
-    height: 65vh;
+.firstHeader > section > a {
+  text-decoration: none;
 }
 
-/* .firstHeader > section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
-
-.phonesHomePageImage{
-    height: 45vh;
-    box-shadow: 5px 5px 5px rgb(194, 194, 194);
+.firstHeader {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
-.sellYourDevicesSection{
-    margin-left: 40px;
-    text-align: left;
+.firstHeader {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../images//phones.jpeg");
+  background-size: cover;
+  filter: brightness(60%);
 }
 
-.sellYourDevicesSection > p{
-    font-size: 18px;
+.phonesHomePageImage {
+  height: 45vh;
+  box-shadow: 5px 5px 5px rgb(194, 194, 194);
+}
+.button-sell-div {
+  margin-top: 50px;
 }
 
-.phoneListDescription{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+.button-sell-div a {
+  text-decoration: none;
 }
 
-.phoneListDescription > h1{
-    color: #ef6c00;
+.button-sell {
+  border-color: "grey";
+  background-color: #f57c00 !important;
+  width: 200px;
+  height: 50px;
+  text-decoration: none;
+}
+.button-sell:hover {
+  border-color: "grey";
+  background-color: #ffffff !important;
+  color: #f57c00;
+  width: 200px;
+  height: 50px;
+  text-decoration: none;
+}
+.button-sell-phone {
+  border-color: "grey";
+  background-color: #f57c00 !important;
+  width: 120px;
+  height: 40px;
+  text-decoration: none;
+}
+.button-sell-phone:hover {
+  border-color: "grey";
+  background-color: #ffffff !important;
+  color: #f57c00;
+  width: 120px;
+  height: 40px;
+  text-decoration: none;
 }
 
-.phoneList{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    column-gap: 10px;
-    border-radius: 7px;
-    margin-top: 5vh;
-    background-color: white;
-    width: 40vw;
-    height: 80vh;
-    box-shadow: 5px 5px 5px rgb(194, 194, 194);
+.hero-content {
+  font-family: "Monserrat", sans-serif;
+  color: white;
+  text-align: center;
+  margin: 0.625rem;
+  filter: brightness(100%);
+  position: absolute;
+  margin-top: -550px;
+  margin-left: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-title {
+  font-size: 90px;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: white;
+}
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 1rem;
+  color: white;
 }
 
-
-
-.phoneList > div{
-    display: flex;
-    flex-direction: column;
-    margin: 5%;
-}
-.phoneList > div> :nth-child(2) {
-   margin-top: 7px;
-   text-decoration: none;
+.sellYourDevicesSection > p {
+  font-size: 18px;
 }
 
-.devicesStyle{
-    height: 25vh;
+.phoneListDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-#sell{
-    background-color: rgb(221, 221, 221);
-    padding: 5%;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content:space-evenly;
+.phoneListDescription > h1 {
+  color: #ef6c00;
 }
 
-footer{
-    background-color: rgb(241, 241, 241);
-    height: 12vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    box-shadow: 5px 5px 5px 5px rgb(99, 98, 98);
-    position: relative;
-    bottom: 0px;
+.phoneList {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  border-radius: 7px;
+  margin-top: 5vh;
+  background-color: white;
+  width: 40vw;
+  height: 80vh;
+  box-shadow: 5px 5px 5px rgb(194, 194, 194);
 }
 
-.footerContainer{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 85vw;
-    margin-left:5vw;
-    text-decoration: none;
+.phoneList > div {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
 }
-.footerContainer > *{
-    color: black;
-    text-decoration: none;
-    width: 90vw;
-    display: flex;
-    justify-content: center;
+.phoneList > div > :nth-child(2) {
+  margin-top: 7px;
+  text-decoration: none;
 }
-.footerLogo{
-    width: 5vw;
-    display: flex;
-    margin-left: 3vw; 
+
+.devicesStyle {
+  height: 25vh;
+}
+
+#sell {
+  background-color: rgb(221, 221, 221);
+  padding: 5%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer {
+  background-color: rgb(241, 241, 241);
+  height: 12vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 5px 5px 5px 5px rgb(99, 98, 98);
+  position: relative;
+  bottom: 0px;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 85vw;
+  margin-left: 5vw;
+  text-decoration: none;
+}
+.footerContainer > * {
+  color: black;
+  text-decoration: none;
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+}
+.footerLogo {
+  width: 5vw;
+  display: flex;
+  margin-left: 3vw;
 }

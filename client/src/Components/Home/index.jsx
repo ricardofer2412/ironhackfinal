@@ -22,26 +22,27 @@ export default function Home() {
                 <NavBar/>
             </header>
             <div id="home" className="mainDiv">
-                <div className="firstHeader">
-                    <img className="phonesHomePageImage" src={phones} alt="all of the phone images" />
-                    <section className="sellYourDevicesSection">
-                        <h1>
+                <div >
+                    <div className="firstHeader">
+
+                    </div>
+                    <div className="hero-content">
+                       <h1 class="hero-title">
+
                             Sell your devices to us.
                         </h1>
-                        <p>
+                        <h2 class="hero-subtitle">
                             We offer the best prices in the market on a reliable platform.
                             If you get a better price we will match it.
-                        </p>
+                        </h2>
+                        <div className="button-sell-div">
                         <a href="#sell">
-                            <Button style={{
-                                "borderColor": 'grey', 
-                                "color": 'white', 
-                                "backgroundColor":'#f57c00',
-                                }} variant="contained">
+                            <Button className='button-sell' variant="contained">
                                     Sell Your Phone
                             </Button>
                         </a>
-                    </section>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="sell">
@@ -57,8 +58,7 @@ export default function Home() {
                             <img className="devicesStyle" src={iphone} alt="all of the phone images" />
                             <Link to='/iphone'>
                                 <Button 
-                                    style={{"backgroundColor": '#f57c00',
-                                            "color": 'white'}} 
+                                   className='button-sell-phone'
                                     variant="contained"> 
                                     iPhone
                                 </Button>
@@ -67,8 +67,7 @@ export default function Home() {
                         <div>
                             <img className="devicesStyle" src={samsung} alt="all of the phone images" />
                             <Link to='/samsung'>
-                                <Button style={{"backgroundColor": '#f57c00', 
-                                                "color": 'white'}} variant="contained"> 
+                                <Button  className='button-sell-phone' variant="contained"> 
                                     Samsung 
                                 </Button>
                             </Link>
@@ -76,8 +75,7 @@ export default function Home() {
                         <div>
                             <img className="devicesStyle" src={pixel} alt="all of the phone images" />
                             <Link to='/pixel'>
-                                <Button style={{"backgroundColor": '#f57c00', 
-                                                "color": 'white'}} variant="contained"> 
+                                <Button  className='button-sell-phone' variant="contained"> 
                                     Pixel 
                                 </Button> 
                             </Link>
@@ -85,8 +83,7 @@ export default function Home() {
                         <div>
                             <img className="devicesStyle" src={ipad} alt="all of the phone images" />
                             <Link to='/ipad'>
-                                <Button style={{"backgroundColor": '#f57c00', 
-                                                "color": 'white'}} variant="contained">
+                                <Button  className='button-sell-phone' variant="contained">
                                     iPad
                                 </Button>
                             </Link>
