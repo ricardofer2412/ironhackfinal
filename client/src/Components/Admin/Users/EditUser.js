@@ -37,7 +37,7 @@ class EditUser extends Component {
     const { params } = this.props.match;
 
     axios
-      .get(`http://localhost:5000/api/users/${params.id}`)
+      .get(`${process.env.REACT_APP_API_URL}/users/${params.id}`)
       .then((response) => {
         const user = response.data;
 
@@ -57,7 +57,7 @@ class EditUser extends Component {
     const { params } = this.props.match;
 
     axios
-      .put(`http://localhost:5000/api/users/${params.id}`, {
+      .put(`${process.env.REACT_APP_API_URL}/users/${params.id}`, {
         role,
         userEmail,
       })

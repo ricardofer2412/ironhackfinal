@@ -34,7 +34,7 @@ export default class Users extends Component {
   }
 
   getAllUsers = () => {
-    axios.get("http://localhost:5000/api/users").then((response) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/users`).then((response) => {
       const list = response.data;
       this.setState({
         usersList: list,
@@ -46,7 +46,7 @@ export default class Users extends Component {
     const { _id } = user;
 
     if (this.state.loggedInUserRole === "admin") {
-      axios.delete(`http://localhost:5000/api/users/${_id}`).then(() => {
+      axios.delete(`${process.env.REACT_APP_API_URL}/users/${_id}`).then(() => {
         this.getAllUsers();
       });
     } else {

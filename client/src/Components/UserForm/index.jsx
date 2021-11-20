@@ -118,7 +118,7 @@ export default function UserForm() {
                         console.log(phone)
 
                         axios
-                            .post('http://localhost:5000/api//newOrder', newOrder)
+                            .post(`${process.env.REACT_APP_API_URL}/newOrder`, newOrder)
                             .then(response =>{
                                 console.log(response);
                             })
@@ -127,7 +127,7 @@ export default function UserForm() {
                 
                         axios({
                             method: "POST", 
-                            url:"http://localhost:5000/api/sendConfirmation", 
+                            url:`${process.env.REACT_APP_API_URL}/sendConfirmation`, 
                             data: {
                                 name: name,   
                                 email: email,
