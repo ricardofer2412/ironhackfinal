@@ -54,8 +54,11 @@ class App extends React.Component {
           this.setState({
             user: null,
             isLoggedIn: false,
+            loading: false,
           });
         });
+    } else {
+      this.setState({ loading: false });
     }
   };
   getTheUser = (userObj, loggedIn) => {
@@ -67,6 +70,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log("this.state.loadiong: ", this.state.loading);
     if (this.state.loading) {
       return (
         <div
