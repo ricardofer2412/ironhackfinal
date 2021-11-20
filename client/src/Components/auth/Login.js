@@ -23,6 +23,7 @@ class Login extends Component {
     authService
       .login(username, password)
       .then((response) => {
+        localStorage.setItem("BUY_BACK_AUTH", JSON.stringify(response));
         this.setState({ username: "", password: "" });
         this.props.getUser(response, true);
         this.props.history.push("/admin");
