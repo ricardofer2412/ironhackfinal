@@ -23,17 +23,17 @@ const index = require("./routes/index");
 const productRouter = require("./routes/Product.routes");
 app.use("/", index);
 app.use("/api", productRouter);
-const orderRoutes = require("./routes/order.routes");
+const orderRoutes = require("./routes/Order.routes");
 app.use("/api", orderRoutes);
 const authRouter = require("./routes/auth.routes");
 app.use("/api", authRouter);
 
 require("./error_handling")(app);
 
-app.use(express.static(path.join(__dirname, "client")));
+// app.use(express.static(path.join(__dirname, "client")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client/build", "index.html"));
+// });
 
 module.exports = app;
