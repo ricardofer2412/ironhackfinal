@@ -110,7 +110,7 @@ class NewProduct extends Component {
   };
 
   render() {
-    const { model, memory, price } = this.state;
+    const { model, memory, price, carrier } = this.state;
     return (
       <div className="admin-main">
         <SideBar />
@@ -133,7 +133,7 @@ class NewProduct extends Component {
                   select
                   label="Carrier"
                   InputProps={{ name: "carrier" }}
-                  value={this.state.category}
+                  value={carrier}
                   onChange={(e) => this.handleChange(e)}
                   // style={{ width: 250 }}
                   SelectProps={{
