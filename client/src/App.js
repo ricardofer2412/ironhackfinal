@@ -37,7 +37,9 @@ class App extends React.Component {
   }
   fetchUser = () => {
     const storedUser = localStorage.getItem("BUY_BACK_AUTH");
-    if (this.state.user === null) {
+    if (storedUser) {
+      this.getTheUser(JSON.parse(storedUser), true);
+    } else if (this.state.user === null) {
       authService
         .loggedin()
         .then((data) => {
@@ -52,10 +54,6 @@ class App extends React.Component {
             isLoggedIn: false,
           });
         });
-    } else {
-      if (storedUser) {
-        this.getTheUser(JSON.parse(storedUser), true);
-      }
     }
   };
   getTheUser = (userObj, loggedIn) => {
