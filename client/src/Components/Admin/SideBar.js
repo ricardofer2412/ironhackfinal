@@ -70,7 +70,7 @@ export default function SideBar() {
           onClick={() => {
             console.log("DOING THIS IN DIV");
             localStorage.removeItem("BUY_BACK_AUTH");
-            window.href.location = "/";
+            window.location.href = "/";
           }}
           className="item-list"
         >

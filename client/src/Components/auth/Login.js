@@ -38,7 +38,10 @@ class Login extends Component {
 
       .catch((error) => {
         this.setState({
-          error: error && error.response ? error.response.data : error.message,
+          error:
+            error && error.response && error.response.data
+              ? error.response.data.message
+              : error.message,
           loading: false,
         });
       });
