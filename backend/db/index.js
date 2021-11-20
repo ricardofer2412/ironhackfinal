@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
-// const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/backend";
-const MONGO_URI =
-  "mongodb+srv://lossuperdevs:MNeeW29MjBwYwXv@cluster0.exzbs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const MONGO_URI = process.env.MONGO_URL || "mongodb://localhost/backend";
 
 mongoose
   .connect(MONGO_URI)
