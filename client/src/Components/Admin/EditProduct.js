@@ -141,6 +141,7 @@ class EditProduct extends Component {
                 <TextField
                   select
                   label="Carrier"
+                  name="carrier"
                   InputProps={{ name: "carrier" }}
                   value={this.state.carrier}
                   onChange={(e) => this.handleChange(e)}
@@ -158,6 +159,7 @@ class EditProduct extends Component {
                   select
                   label="Memory"
                   InputProps={{ name: "memory" }}
+                  name="memory"
                   value={memory}
                   onChange={(e) => this.handleChange(e)}
                   SelectProps={{
@@ -176,6 +178,7 @@ class EditProduct extends Component {
                 <TextField
                   select
                   label="Category"
+                  name="category"
                   InputProps={{ name: "category" }}
                   value={category}
                   onChange={(e) => this.handleChange(e)}

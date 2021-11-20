@@ -70,7 +70,7 @@ export default function SideBar() {
           </p>
         </div>
         <div
-          syyle={{ cursor: "pointer" }}
+          style={{ cursor: "pointer" }}
           onClick={() => {
             localStorage.remove("BUY_BACK_AUTH");
             window.href.location = "/";
