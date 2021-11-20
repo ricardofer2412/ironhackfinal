@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
+import { ExitToApp } from "@mui/icons-material";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
@@ -66,6 +67,25 @@ export default function SideBar() {
             >
               Users
             </Link>
+          </p>
+        </div>
+        <div
+          syyle={{ cursor: "pointer" }}
+          onClick={() => {
+            localStorage.remove("BUY_BACK_AUTH");
+            window.href.location = "/";
+          }}
+          className="item-list"
+        >
+          <ExitToApp style={{ marginTop: "10px" }} />
+          <p
+            style={{
+              textDecoration: "none",
+              color: "white",
+              pointer: "cursor",
+            }}
+          >
+            Logout
           </p>
         </div>
       </div>
