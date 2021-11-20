@@ -25,6 +25,7 @@ import EditOrder from "./Components/Admin/EditOrder";
 import TrackOrder from "./Components/Track Order";
 import EditUser from "./Components/Admin/Users/EditUser";
 import LandingPage from "./Components/Admin/LandingPage";
+import { CircularProgress } from "@mui/material";
 
 class App extends React.Component {
   state = {
@@ -46,6 +47,7 @@ class App extends React.Component {
           this.setState({
             user: data,
             isLoggedIn: true,
+            loading: false,
           });
         })
         .catch((err) => {
@@ -60,10 +62,29 @@ class App extends React.Component {
     this.setState({
       user: userObj,
       isLoggedIn: loggedIn,
+      loading: false,
     });
   };
 
   render() {
+    if (this.state.loading) {
+      return (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <CircularProgress
+            style={{ marginTop: 60 }}
+            size={200}
+            color="primary"
+          />
+        </div>
+      );
+    }
     return (
       <div className="App">
         <Router>
