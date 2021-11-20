@@ -1,4 +1,5 @@
 import axios from "axios";
+import error_handling from "../../../../backend/error_handling";
 
 class AuthService {
   constructor() {
@@ -43,7 +44,9 @@ class AuthService {
         console.log("login in service: ", response);
         return response.data;
       })
-      .catch((err) => console.log("err in login in service: ", err));
+      .catch((err) => {
+        throw err;
+      });
   };
 
   logout = () => {

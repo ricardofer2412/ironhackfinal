@@ -12,14 +12,16 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { CircularProgress } from "@mui/material";
 
 const theme = createTheme();
 class Login extends Component {
-  state = { username: "", password: "" };
+  state = { username: "", password: "", error: "", loading: false };
 
   handleFormSubmit = (event) => {
     event.preventDefault();
     const { username, password } = this.state;
+    this.setState({ loading: true, error: "" });
     authService
       .login(username, password)
       .then((response) => {
@@ -30,10 +32,13 @@ class Login extends Component {
         this.setState({
           userName: "",
           password: "",
+          loading: false,
         });
       })
 
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        this.setState({ error: error.response.data, loading: false });
+      });
   };
 
   handleChange = (event) => {
@@ -74,6 +79,7 @@ class Login extends Component {
                   fullWidth
                   label="Username"
                   name="Username"
+                  error={this.state.error}
                   autoFocus
                   value={this.state.username}
                   onChange={(e) => this.handleChange(e)}
@@ -83,6 +89,7 @@ class Login extends Component {
                   InputProps={{ name: "password" }}
                   required
                   fullWidth
+                  error={this.state.error}
                   name="password"
                   label="Password"
                   type="password"
@@ -91,17 +98,33 @@ class Login extends Component {
                   value={this.state.password}
                   onChange={(e) => this.handleChange(e)}
                 />
+                {this.state.error && (
+                  <Typography
+                    style={{
+                      color: "red",
+                      textAlign: "center",
+                      marginTop: 10,
+                      marginBottom: 10,
+                    }}
+                  >
+                    {this.state.error}
+                  </Typography>
+                )}
+
                 <FormControlLabel
                   control={<Checkbox value="remember" color="primary" />}
                   label="Remember me"
                 />
                 <Button
-                  style={{ backgroundColor: "#5e35b1" }}
+                  style={{ backgroundColor: "#5e35b1", position: "relative" }}
                   type="submit"
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
                 >
+                  {this.state.loading && (
+                    <CircularProgress style={{ position: "absolute" }} />
+                  )}
                   Sign In
                 </Button>
                 {/* <Grid container>

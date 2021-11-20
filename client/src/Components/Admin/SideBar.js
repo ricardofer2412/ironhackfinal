@@ -72,13 +72,26 @@ export default function SideBar() {
         <div
           style={{ cursor: "pointer" }}
           onClick={() => {
+            console.log("DOING THIS IN DIV");
             localStorage.remove("BUY_BACK_AUTH");
             window.href.location = "/";
           }}
           className="item-list"
         >
-          <ExitToApp style={{ marginTop: "10px" }} />
+          <ExitToApp
+            onClick={() => {
+              console.log("DOING THIS IN ICON");
+              localStorage.remove("BUY_BACK_AUTH");
+              window.href.location = "/";
+            }}
+            style={{ marginTop: "10px" }}
+          />
           <p
+            onClick={() => {
+              console.log("DOING THIS IN P");
+              localStorage.remove("BUY_BACK_AUTH");
+              window.href.location = "/";
+            }}
             style={{
               textDecoration: "none",
               color: "white",
