@@ -7,7 +7,6 @@ import Footer from '../../Components/Footer'
 import './index.css'
 
 //import all of the images
-import phones from '../../images/phones.jpeg'
 import iphone from '../../images/iphone.jpeg'
 import samsung from '../../images/samsung.jpeg'
 import pixel from '../../images/pixel.jpeg'
