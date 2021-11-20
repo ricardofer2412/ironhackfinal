@@ -122,6 +122,7 @@ class Login extends Component {
                   style={{ backgroundColor: "#5e35b1", position: "relative" }}
                   type="submit"
                   fullWidth
+                  disabled={this.state.loading}
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
                 >

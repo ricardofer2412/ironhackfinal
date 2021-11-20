@@ -30,10 +30,6 @@ export default function SideBar() {
             </Link>
           </p>
         </div>
-        <div className="item-list">
-          <PersonIcon style={{ marginTop: "10px" }} />
-          <p>Profile</p>
-        </div>
 
         <div className="item-list">
           <ShoppingCartIcon style={{ marginTop: "10px" }} />
@@ -73,25 +69,13 @@ export default function SideBar() {
           style={{ cursor: "pointer" }}
           onClick={() => {
             console.log("DOING THIS IN DIV");
-            localStorage.remove("BUY_BACK_AUTH");
+            localStorage.removeItem("BUY_BACK_AUTH");
             window.href.location = "/";
           }}
           className="item-list"
         >
-          <ExitToApp
-            onClick={() => {
-              console.log("DOING THIS IN ICON");
-              localStorage.remove("BUY_BACK_AUTH");
-              window.href.location = "/";
-            }}
-            style={{ marginTop: "10px" }}
-          />
+          <ExitToApp style={{ marginTop: "10px" }} />
           <p
-            onClick={() => {
-              console.log("DOING THIS IN P");
-              localStorage.remove("BUY_BACK_AUTH");
-              window.href.location = "/";
-            }}
             style={{
               textDecoration: "none",
               color: "white",

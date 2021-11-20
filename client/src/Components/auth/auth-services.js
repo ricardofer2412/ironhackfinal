@@ -35,17 +35,18 @@ class AuthService {
     return this.service.get("/loggedin").then((response) => response.data);
   };
 
-  login = (username, password) => {
+  login = async (username, password) => {
     // console.log("in the service: ", username, password);
-    return this.service
-      .post("/login", { username, password })
-      .then((response) => {
-        console.log("login in service: ", response);
-        return response.data;
-      })
-      .catch((err) => {
-        throw err;
+    try {
+      const response = await this.service.post("/login", {
+        username,
+        password,
       });
+
+      return response.data;
+    } catch (e) {
+      throw e;
+    }
   };
 
   logout = () => {
