@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import { ExitToApp } from "@mui/icons-material";
-import PersonIcon from "@mui/icons-material/Person";
+
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import PeopleIcon from "@mui/icons-material/People";
