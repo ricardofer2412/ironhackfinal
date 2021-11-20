@@ -1,5 +1,4 @@
 import axios from "axios";
-import error_handling from "../../../../backend/error_handling";
 
 class AuthService {
   constructor() {
